@@ -1,0 +1,6 @@
+D:\29. Web Services\WebService\Website\bin\Website.dll.config
+D:\29. Web Services\WebService\Website\bin\Website.dll
+D:\29. Web Services\WebService\Website\bin\Website.pdb
+D:\29. Web Services\WebService\Website\obj\Debug\Website.dll
+D:\29. Web Services\WebService\Website\obj\Debug\Website.pdb
+D:\29. Web Services\WebService\Website\obj\Debug\Website.csprojResolveAssemblyReference.cache

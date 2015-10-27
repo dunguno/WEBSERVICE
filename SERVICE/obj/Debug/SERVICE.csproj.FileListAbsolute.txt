@@ -1,0 +1,12 @@
+D:\29. Web Services\WebService\SERVICE\bin\SERVICE.dll.config
+D:\29. Web Services\WebService\SERVICE\bin\SERVICE.dll
+D:\29. Web Services\WebService\SERVICE\bin\SERVICE.pdb
+D:\29. Web Services\WebService\SERVICE\obj\Debug\SERVICE.dll
+D:\29. Web Services\WebService\SERVICE\obj\Debug\SERVICE.pdb
+D:\29. Web Services\WebService\SERVICE\obj\Debug\SERVICE.csprojResolveAssemblyReference.cache
+D:\SGU DATA\NAM V\WEB SERVICE\WebService\SERVICE\bin\SERVICE.dll.config
+D:\SGU DATA\NAM V\WEB SERVICE\WebService\SERVICE\bin\SERVICE.dll
+D:\SGU DATA\NAM V\WEB SERVICE\WebService\SERVICE\bin\SERVICE.pdb
+D:\SGU DATA\NAM V\WEB SERVICE\WebService\SERVICE\obj\Debug\SERVICE.csprojResolveAssemblyReference.cache
+D:\SGU DATA\NAM V\WEB SERVICE\WebService\SERVICE\obj\Debug\SERVICE.dll
+D:\SGU DATA\NAM V\WEB SERVICE\WebService\SERVICE\obj\Debug\SERVICE.pdb

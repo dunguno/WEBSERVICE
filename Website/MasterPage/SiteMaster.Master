@@ -1,0 +1,117 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SiteMaster.master.cs" Inherits="Website.MasterPage.SiteMaster" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="../Style/style.css" rel="stylesheet" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+	<div id="conatiner">
+	 	<div id="header">
+	 		<div id="logo">
+	 			
+	 		</div>
+	 		<div id="search_area">
+	 			<input id="text_Area" type="text" placeholder="Tìm kiếm ...">
+	 			<input id="button" type="button" value="Tìm">
+	 		</div>
+	 		
+	 	</div>
+	 	<div id="nav_area">
+	 			<ul>
+	 				<li><a href="../Home.aspx">Trang chủ</a></li>
+	 				<li><a href="../Product.aspx">Sản phẩm</a></li>
+	 				<li><a href="../Register.aspx">Đăng ký</a></li>
+	 				<li><a href="../About.aspx">Giới thiệu</a></li>
+	 				<li><a href="../Contact.aspx">Liên hệ</a></li>
+	 			</ul>
+	 	</div><!--end nav area-->
+
+	 	<div id="left_side">
+	 		<div id="catagories">
+	 			<h2>Danh mục bánh</h2>
+	 			<ul>
+	 				<li><a href="#">Electronics</a></li>
+	 				<li><a href="#">Fashio Item</a></li>
+	 				<li><a href="#">Beauty Product</a></li>
+	 				<li><a href="#">I Phone</a></li>
+	 				<li><a href="#">Other's Item</a></li>
+	 			</ul>
+	 		</div><!--end catagories-->
+
+	 		<div id="payment_area">
+	 			<h2>Giá</h2>
+                <ul>
+	 				<li><a href="#">> 500.000 </a></li>
+	 				<li><a href="#">300.000 - 500.000</a></li>
+	 				<li><a href="#">100.000 - 300.000</a></li>
+	 				<li><a href="#">< 100.000</a></li>
+	 			</ul>
+	 		</div><!--end payments area-->
+	 			
+	 		<div id="Shipping">
+	 			 <h2>Đăng nhập</h2>
+	 				
+	 		</div><!--end shipping area-->
+	 		<div id="contact">
+	 		<h2>Liên hệ</h2>
+	 			<p>Địa chỉ:<br>
+	 			3 An Dương Vương, Q5, Tp.HCM
+	 			<br>
+	 			Phone: 0919-911-911
+	 			</p>
+	 		</div><!--end contact area-->
+	 	</div><!--end left_side area-->
+
+	 	<div id="right_side">
+
+	 	<div id="product_and_details">
+	 		<div id="product">
+	 			<img src="camera.png">
+	 		</div>
+	 			<div id="details">
+	 			<h2>Digital Camera</h2>
+	 			<ul>
+	 			<li>20 Mega pixel</li>
+	 			 <li>Auto Flash</li>
+	 			 <li>2 Years warranty</li>
+	 			 <li>Face Ditection</li>
+	 			 <li>1080px Video recording</li>
+	 			 <li>Battery Life 36hr</li>
+	 			 <li>Zoom 4X</li>
+	 			 </ul>
+	 			 <small>Price: $100</small>
+	 			 </div>
+	 	</div><!-- end of product and details area-->
+
+	 		<!--Master Page-->
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+	 	    <div id="our_product">
+                    		
+        </asp:ContentPlaceHolder>
+
+				 	<!--end of our product area-->
+				 	<div id="additional_area"> </div>
+				 		
+				 	</div><!--end of right area-->
+ 	
+ 	<div id="footer_area">
+	
+	<ul>
+		<li><a href="#">Trang chủ</a></li>
+		<li><a href="#">Sản phẩm</a></li>
+		<li><a href="#">Đăng ký</a></li>
+		<li><a href="#">Giới thiệu</a></li>
+		<li><a href="#">Liên hệ</a></li>
+	</ul>
+ 	<p> Copyright © 2015</p>
+	</div>
+</div>
+
+</body>
+</html>
