@@ -32,3 +32,20 @@ C:\Users\Huy Do\Desktop\WebService\WindowsForms\obj\Debug\WindowsForms.Propertie
 C:\Users\Huy Do\Desktop\WebService\WindowsForms\obj\Debug\WindowsForms.SanPhamChiTiet_Form.resources
 C:\Users\Huy Do\Desktop\WebService\WindowsForms\obj\Debug\WindowsForms.SanPham_Form.resources
 C:\Users\Huy Do\Desktop\WebService\WindowsForms\obj\Debug\WindowsForms.csproj.GenerateResource.Cache
+D:\SGU DATA\NAM V\WEB SERVICE\WebService_Ver15\WebService_Ver15\WindowsForms\bin\Debug\WindowsForms.exe.config
+D:\SGU DATA\NAM V\WEB SERVICE\WebService_Ver15\WebService_Ver15\WindowsForms\bin\Debug\WindowsForms.exe
+D:\SGU DATA\NAM V\WEB SERVICE\WebService_Ver15\WebService_Ver15\WindowsForms\bin\Debug\WindowsForms.pdb
+D:\SGU DATA\NAM V\WEB SERVICE\WebService_Ver15\WebService_Ver15\WindowsForms\obj\Debug\WindowsForms.csprojResolveAssemblyReference.cache
+D:\SGU DATA\NAM V\WEB SERVICE\WebService_Ver15\WebService_Ver15\WindowsForms\obj\Debug\WindowsForms.ChiTietDonHang_Form.resources
+D:\SGU DATA\NAM V\WEB SERVICE\WebService_Ver15\WebService_Ver15\WindowsForms\obj\Debug\WindowsForms.DangNhap_Form.resources
+D:\SGU DATA\NAM V\WEB SERVICE\WebService_Ver15\WebService_Ver15\WindowsForms\obj\Debug\WindowsForms.DanhMuc_Form.resources
+D:\SGU DATA\NAM V\WEB SERVICE\WebService_Ver15\WebService_Ver15\WindowsForms\obj\Debug\WindowsForms.DonHang_Form.resources
+D:\SGU DATA\NAM V\WEB SERVICE\WebService_Ver15\WebService_Ver15\WindowsForms\obj\Debug\WindowsForms.KhachHang_Form.resources
+D:\SGU DATA\NAM V\WEB SERVICE\WebService_Ver15\WebService_Ver15\WindowsForms\obj\Debug\WindowsForms.Main_Form.resources
+D:\SGU DATA\NAM V\WEB SERVICE\WebService_Ver15\WebService_Ver15\WindowsForms\obj\Debug\WindowsForms.NhanVien_Form.resources
+D:\SGU DATA\NAM V\WEB SERVICE\WebService_Ver15\WebService_Ver15\WindowsForms\obj\Debug\WindowsForms.Properties.Resources.resources
+D:\SGU DATA\NAM V\WEB SERVICE\WebService_Ver15\WebService_Ver15\WindowsForms\obj\Debug\WindowsForms.SanPhamChiTiet_Form.resources
+D:\SGU DATA\NAM V\WEB SERVICE\WebService_Ver15\WebService_Ver15\WindowsForms\obj\Debug\WindowsForms.SanPham_Form.resources
+D:\SGU DATA\NAM V\WEB SERVICE\WebService_Ver15\WebService_Ver15\WindowsForms\obj\Debug\WindowsForms.csproj.GenerateResource.Cache
+D:\SGU DATA\NAM V\WEB SERVICE\WebService_Ver15\WebService_Ver15\WindowsForms\obj\Debug\WindowsForms.exe
+D:\SGU DATA\NAM V\WEB SERVICE\WebService_Ver15\WebService_Ver15\WindowsForms\obj\Debug\WindowsForms.pdb

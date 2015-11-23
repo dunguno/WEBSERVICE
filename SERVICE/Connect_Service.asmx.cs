@@ -20,7 +20,7 @@ namespace SERVICE
         [WebMethod]
         public string ChuoiKetNoi()
         {
-            return @"Data Source=HUY;Initial Catalog=BakeryShop;Integrated Security=True";
+            return @"Data Source=UNO-VAIO;Initial Catalog=BakeryShop;Integrated Security=True";
         }
     }
 }
