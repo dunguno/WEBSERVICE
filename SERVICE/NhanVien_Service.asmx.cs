@@ -62,6 +62,30 @@ namespace SERVICE
         }
 
         [WebMethod]
+        public string NhanVien_GetName(int ma_nv)
+        {
+            DataTable mytb = new DataTable("Get_ByID");
+            string query = "select ten_nv from NhanVien where ma_nv ='" + ma_nv + "'";
+            SqlConnection conn = new SqlConnection(connect.ChuoiKetNoi());
+            SqlDataAdapter da = new SqlDataAdapter(query, conn);
+            da.Fill(mytb);
+            DataRow dr = mytb.Rows[0];
+            string ten_nv = dr[0].ToString();
+            return ten_nv;
+        }
+
+        [WebMethod]
+        public DataTable NhanVien_Load()
+        {
+            DataTable mytb = new DataTable("Get_ByAll");
+            string query = "select * from NhanVien";
+            SqlConnection conn = new SqlConnection(connect.ChuoiKetNoi());
+            SqlDataAdapter da = new SqlDataAdapter(query, conn);
+            da.Fill(mytb);
+            return mytb;
+        }
+
+        [WebMethod]
         public bool Delete_NhanVien(int ma_nv)
         {
             try
@@ -81,6 +105,7 @@ namespace SERVICE
                 return false;
             }
         }
+
         [WebMethod]
         public bool Update_NhanVien(int ma_nv,string ten_nv, string sdt, string diachi, string email, string acccount, string pass)
         {

@@ -9,8 +9,10 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WindowsForms</RootNamespace>
     <AssemblyName>WindowsForms</AssemblyName>
-    <TargetFrameworkVersion>v3.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -44,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiTietDonHang_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ChiTietDonHang_Form.Designer.cs">
+      <DependentUpon>ChiTietDonHang_Form.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ultilities.cs" />
     <Compile Include="DangNhap_Form.cs">
       <SubType>Form</SubType>
@@ -95,7 +103,22 @@
     <Compile Include="SanPham_Form.Designer.cs">
       <DependentUpon>SanPham_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Web References\ChiTietDonHang_ServiceReferences\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <Compile Include="Web References\DanhMuc_ServiceReferences\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\DonHang_ServiceReferences\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\KhachHang_ServiceReferences\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
@@ -105,6 +128,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
     </Compile>
+    <Compile Include="Web References\SanPham_ServiceReferences\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ChiTietDonHang_Form.resx">
+      <DependentUpon>ChiTietDonHang_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DangNhap_Form.resx">
       <DependentUpon>DangNhap_Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -149,8 +180,23 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="Web References\ChiTietDonHang_ServiceReferences\ChiTietDonHang_Service.wsdl" />
+    <None Include="Web References\ChiTietDonHang_ServiceReferences\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <None Include="Web References\DanhMuc_ServiceReferences\DanhMuc_Service.wsdl" />
     <None Include="Web References\DanhMuc_ServiceReferences\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\DonHang_ServiceReferences\DonHang_Service.wsdl" />
+    <None Include="Web References\DonHang_ServiceReferences\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\KhachHang_ServiceReferences\KhachHang_Service.wsdl" />
+    <None Include="Web References\KhachHang_ServiceReferences\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -159,6 +205,11 @@
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Web References\SanPham_ServiceReferences\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\SanPham_ServiceReferences\SanPham_Service.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\login.png" />
@@ -197,6 +248,17 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
+    <WebReferenceUrl Include="http://localhost:2122/ChiTietDonHang_Service.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\ChiTietDonHang_ServiceReferences\</RelPath>
+      <UpdateFromURL>http://localhost:2122/ChiTietDonHang_Service.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>WindowsForms_ChiTietDonHang_ServiceReferences_ChiTietDonHang_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
     <WebReferenceUrl Include="http://localhost:2122/DanhMuc_Service.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\DanhMuc_ServiceReferences\</RelPath>
@@ -208,6 +270,28 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>WindowsForms_DanhMuc_Service_DanhMuc_Service</CachedSettingsPropName>
     </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:2122/DonHang_Service.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\DonHang_ServiceReferences\</RelPath>
+      <UpdateFromURL>http://localhost:2122/DonHang_Service.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>WindowsForms_DonHang_ServiceReference_DonHang_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:2122/KhachHang_Service.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\KhachHang_ServiceReferences\</RelPath>
+      <UpdateFromURL>http://localhost:2122/KhachHang_Service.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>WindowsForms_KhachHang_ServiceReferences_KhachHang_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
     <WebReferenceUrl Include="http://localhost:2122/NhanVien_Service.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\NhanVien_ServiceReferences\</RelPath>
@@ -218,6 +302,17 @@
       </CachedDynamicPropName>
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>WindowsForms_NhanVien_ServiceReferences_NhanVien_Service</CachedSettingsPropName>
+    </WebReferenceUrl>
+    <WebReferenceUrl Include="http://localhost:2122/SanPham_Service.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\SanPham_ServiceReferences\</RelPath>
+      <UpdateFromURL>http://localhost:2122/SanPham_Service.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>WindowsForms_SanPham_ServiceReference_SanPham_Service</CachedSettingsPropName>
     </WebReferenceUrl>
   </ItemGroup>
   <ItemGroup>
@@ -231,6 +326,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\SanPham_ServiceReferences\SanPham_Service.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\DonHang_ServiceReferences\DonHang_Service.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\ChiTietDonHang_ServiceReferences\ChiTietDonHang_Service.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\KhachHang_ServiceReferences\KhachHang_Service.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\no-image.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -14,7 +14,7 @@ namespace WindowsForms
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SanPhamChiTiet_Form());
+            Application.Run(new DangNhap_Form());
         }
     }
 }

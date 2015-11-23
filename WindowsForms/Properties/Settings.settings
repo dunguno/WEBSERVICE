@@ -8,5 +8,17 @@
     <Setting Name="WindowsForms_NhanVien_ServiceReferences_NhanVien_Service" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">http://localhost:2122/NhanVien_Service.asmx</Value>
     </Setting>
+    <Setting Name="WindowsForms_SanPham_ServiceReference_SanPham_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:2122/SanPham_Service.asmx</Value>
+    </Setting>
+    <Setting Name="WindowsForms_DonHang_ServiceReference_DonHang_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:2122/DonHang_Service.asmx</Value>
+    </Setting>
+    <Setting Name="WindowsForms_ChiTietDonHang_ServiceReferences_ChiTietDonHang_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:2122/ChiTietDonHang_Service.asmx</Value>
+    </Setting>
+    <Setting Name="WindowsForms_KhachHang_ServiceReferences_KhachHang_Service" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:2122/KhachHang_Service.asmx</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

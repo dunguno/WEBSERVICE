@@ -10,6 +10,7 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
+    <form runat="server">
 	<div id="conatiner">
 	 	<div id="header">
 	 		<div id="logo">
@@ -35,18 +36,18 @@
 	 		<div id="catagories">
 	 			<h2>Danh mục bánh</h2>
 	 			<ul>
-	 				<li><a href="#">Electronics</a></li>
-	 				<li><a href="#">Fashio Item</a></li>
-	 				<li><a href="#">Beauty Product</a></li>
-	 				<li><a href="#">I Phone</a></li>
-	 				<li><a href="#">Other's Item</a></li>
+                     <asp:Repeater ID="DataListDanhMuc" runat="server"> 
+                        <ItemTemplate>
+                            <li><a href ="Categories.aspx?phan_loai=<%# Eval("ma_loai") %>"><%# Eval("ten_loai") %></a></li>
+                        </ItemTemplate>
+                    </asp:Repeater>      
 	 			</ul>
 	 		</div><!--end catagories-->
 
 	 		<div id="payment_area">
 	 			<h2>Giá</h2>
                 <ul>
-	 				<li><a href="#">> 500.000 </a></li>
+	 				<li><a href="">> 500.000 </a></li>
 	 				<li><a href="#">300.000 - 500.000</a></li>
 	 				<li><a href="#">100.000 - 300.000</a></li>
 	 				<li><a href="#">< 100.000</a></li>
@@ -55,49 +56,83 @@
 	 			
 	 		<div id="Shipping">
 	 			 <h2>Đăng nhập</h2>
-	 				
+                 <%--<form id="formDangNhap" runat="server">--%>
+                     <table>
+                         <tr>
+                             <td style="text-align:left; padding-left:10px; width:100%"><strong>Tên đăng nhập: </strong></td>
+                             <td style="padding-left:1px; padding-right:10px">
+                                 <asp:TextBox ID="txtUser" runat="server" Width="150px" Height="22px" />
+
+                             </td>
+                         </tr>
+
+                         <tr>
+
+                             <td style="text-align:left; padding-left:10px; width:100%"><strong>Mật khẩu: </strong></td>
+                             <td style="padding-left:1px; padding-right:10px">
+                                 <asp:TextBox ID="txtPass" runat="server" Width="150px" Height="22px" TextMode="Password" />
+
+                             </td>
+
+                         </tr>
+                         <tr>
+                             <td></td>
+                             <td style="padding-top:7px; padding-left:78px">
+                                 <asp:Button runat="server" ID="btLogin" Text="Đăng nhập" />
+                             </td>
+                         </tr>
+                         <tr>
+                             <td></td>
+                             <td style="padding-top:3px; padding-left:100px">
+                                 <asp:LinkButton runat="server" ID="btReg" Text="Đăng ký" />
+                             </td>
+                         </tr>
+                     </table>
+                 <%--</form>--%>	
 	 		</div><!--end shipping area-->
 	 		<div id="contact">
-	 		<h2>Liên hệ</h2>
-	 			<p>Địa chỉ:<br>
-	 			3 An Dương Vương, Q5, Tp.HCM
-	 			<br>
-	 			Phone: 0919-911-911
-	 			</p>
-	 		</div><!--end contact area-->
+	 		<h2>Hỗ trợ</h2>
+                 <ul style="padding-bottom:5px">
+                     Bộ phận kinh doanh:
+                 </ul>
+                 <ul>
+                         <a href="ymsgr:sendIM?nhoc_conan85">
+                             <img src="/Images/GUI/online.gif" alt="Bo phan kinh doanh" />
+                         </a>
+                 </ul>
+
+                 <ul style="padding-top:15px; padding-bottom:5px">
+                     Chăm sóc khách hàng:
+                 </ul>
+                 <ul>
+                         <a href="ymsgr:sendIM?nhoc_conan85">
+                             <img src="/Images/GUI/online.gif" alt="Bo phan cham soc khach hang" />
+                         </a>
+                 </ul>
+             </div><!--end contact area-->
 	 	</div><!--end left_side area-->
 
 	 	<div id="right_side">
 
-	 	<div id="product_and_details">
-	 		<div id="product">
-	 			<img src="camera.png">
-	 		</div>
-	 			<div id="details">
-	 			<h2>Digital Camera</h2>
-	 			<ul>
-	 			<li>20 Mega pixel</li>
-	 			 <li>Auto Flash</li>
-	 			 <li>2 Years warranty</li>
-	 			 <li>Face Ditection</li>
-	 			 <li>1080px Video recording</li>
-	 			 <li>Battery Life 36hr</li>
-	 			 <li>Zoom 4X</li>
-	 			 </ul>
-	 			 <small>Price: $100</small>
-	 			 </div>
-	 	</div><!-- end of product and details area-->
+	 	    <!-- end of product and details area-->
 
 	 		<!--Master Page-->
 
         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
 	 	    <div id="our_product">
-                    		
+                 <h2>Trang chủ</h2>
+            </div>
         </asp:ContentPlaceHolder>
 
 				 	<!--end of our product area-->
 				 	<div id="additional_area"> </div>
 				 		
+				 	</div><!--end of right area-->
+ 	
+ 	<div id="footer_area">
+	
+	<ul>
+		<li><a href="#">Trang chủ			 		
 				 	</div><!--end of right area-->
  	
  	<div id="footer_area">
@@ -112,6 +147,6 @@
  	<p> Copyright © 2015</p>
 	</div>
 </div>
-
+</form>
 </body>
 </html>

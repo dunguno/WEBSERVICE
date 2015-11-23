@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="DanhMuc_GetByAll">
+        <s:complexType />
+      </s:element>
+      <s:element name="DanhMuc_GetByAllResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DanhMuc_GetByAllResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DanhMuc_GetByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ma_loai" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DanhMuc_GetByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DanhMuc_GetByIDResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DanhMuc_GetByName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ten_loai" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DanhMuc_GetByNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DanhMuc_GetByNameResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete_DanhMuc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ma_loai" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete_DanhMucResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Delete_DanhMucResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_DanhMuc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ma_loai" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="ten_loai" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_DanhMucResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Update_DanhMucResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insert_DanhMuc">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ten_loai" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insert_DanhMucResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Insert_DanhMucResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="DanhMuc_GetByAllSoapIn">
+    <wsdl:part name="parameters" element="tns:DanhMuc_GetByAll" />
+  </wsdl:message>
+  <wsdl:message name="DanhMuc_GetByAllSoapOut">
+    <wsdl:part name="parameters" element="tns:DanhMuc_GetByAllResponse" />
+  </wsdl:message>
+  <wsdl:message name="DanhMuc_GetByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:DanhMuc_GetByID" />
+  </wsdl:message>
+  <wsdl:message name="DanhMuc_GetByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:DanhMuc_GetByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="DanhMuc_GetByNameSoapIn">
+    <wsdl:part name="parameters" element="tns:DanhMuc_GetByName" />
+  </wsdl:message>
+  <wsdl:message name="DanhMuc_GetByNameSoapOut">
+    <wsdl:part name="parameters" element="tns:DanhMuc_GetByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="Delete_DanhMucSoapIn">
+    <wsdl:part name="parameters" element="tns:Delete_DanhMuc" />
+  </wsdl:message>
+  <wsdl:message name="Delete_DanhMucSoapOut">
+    <wsdl:part name="parameters" element="tns:Delete_DanhMucResponse" />
+  </wsdl:message>
+  <wsdl:message name="Update_DanhMucSoapIn">
+    <wsdl:part name="parameters" element="tns:Update_DanhMuc" />
+  </wsdl:message>
+  <wsdl:message name="Update_DanhMucSoapOut">
+    <wsdl:part name="parameters" element="tns:Update_DanhMucResponse" />
+  </wsdl:message>
+  <wsdl:message name="Insert_DanhMucSoapIn">
+    <wsdl:part name="parameters" element="tns:Insert_DanhMuc" />
+  </wsdl:message>
+  <wsdl:message name="Insert_DanhMucSoapOut">
+    <wsdl:part name="parameters" element="tns:Insert_DanhMucResponse" />
+  </wsdl:message>
+  <wsdl:portType name="DanhMuc_ServiceSoap">
+    <wsdl:operation name="DanhMuc_GetByAll">
+      <wsdl:input message="tns:DanhMuc_GetByAllSoapIn" />
+      <wsdl:output message="tns:DanhMuc_GetByAllSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DanhMuc_GetByID">
+      <wsdl:input message="tns:DanhMuc_GetByIDSoapIn" />
+      <wsdl:output message="tns:DanhMuc_GetByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DanhMuc_GetByName">
+      <wsdl:input message="tns:DanhMuc_GetByNameSoapIn" />
+      <wsdl:output message="tns:DanhMuc_GetByNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_DanhMuc">
+      <wsdl:input message="tns:Delete_DanhMucSoapIn" />
+      <wsdl:output message="tns:Delete_DanhMucSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_DanhMuc">
+      <wsdl:input message="tns:Update_DanhMucSoapIn" />
+      <wsdl:output message="tns:Update_DanhMucSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Insert_DanhMuc">
+      <wsdl:input message="tns:Insert_DanhMucSoapIn" />
+      <wsdl:output message="tns:Insert_DanhMucSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DanhMuc_ServiceSoap" type="tns:DanhMuc_ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DanhMuc_GetByAll">
+      <soap:operation soapAction="http://tempuri.org/DanhMuc_GetByAll" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DanhMuc_GetByID">
+      <soap:operation soapAction="http://tempuri.org/DanhMuc_GetByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DanhMuc_GetByName">
+      <soap:operation soapAction="http://tempuri.org/DanhMuc_GetByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_DanhMuc">
+      <soap:operation soapAction="http://tempuri.org/Delete_DanhMuc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_DanhMuc">
+      <soap:operation soapAction="http://tempuri.org/Update_DanhMuc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_DanhMuc">
+      <soap:operation soapAction="http://tempuri.org/Insert_DanhMuc" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DanhMuc_ServiceSoap12" type="tns:DanhMuc_ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="DanhMuc_GetByAll">
+      <soap12:operation soapAction="http://tempuri.org/DanhMuc_GetByAll" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DanhMuc_GetByID">
+      <soap12:operation soapAction="http://tempuri.org/DanhMuc_GetByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DanhMuc_GetByName">
+      <soap12:operation soapAction="http://tempuri.org/DanhMuc_GetByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_DanhMuc">
+      <soap12:operation soapAction="http://tempuri.org/Delete_DanhMuc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_DanhMuc">
+      <soap12:operation soapAction="http://tempuri.org/Update_DanhMuc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_DanhMuc">
+      <soap12:operation soapAction="http://tempuri.org/Insert_DanhMuc" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DanhMuc_Service">
+    <wsdl:port name="DanhMuc_ServiceSoap" binding="tns:DanhMuc_ServiceSoap">
+      <soap:address location="http://localhost:2122/DanhMuc_Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="DanhMuc_ServiceSoap12" binding="tns:DanhMuc_ServiceSoap12">
+      <soap12:address location="http://localhost:2122/DanhMuc_Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

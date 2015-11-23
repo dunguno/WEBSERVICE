@@ -26,14 +26,8 @@ namespace WindowsForms
         private void LoadData()
         {
             dgvNhanvien.DataSource = nhanvien.NhanVien_GetAll();
-            //dgvNhanvien.Columns.Contains(dgvNhanvien.Columns[0].DataPropertyName="ma_nv");
-            dgvNhanvien.Columns[0].Visible = true;
-            dgvNhanvien.Columns[1].Visible = true;
-            dgvNhanvien.Columns[2].Visible = false;
-            dgvNhanvien.Columns[3].Visible = false;
-            dgvNhanvien.Columns[4].Visible = false;
-            dgvNhanvien.Columns[5].Visible = false;
-            dgvNhanvien.Columns[6].Visible = false;
+            string[] columns = { "ma_nv", "ten_nv" };
+            Ultilities.DataGridViewFormat(dgvNhanvien, columns);
         }
 
         private void DataBinding()
@@ -136,17 +130,12 @@ namespace WindowsForms
             if (txtTim.Text != "")
             {
                 dgvNhanvien.DataSource = nhanvien.NhanVien_GetByName(txtTim.Text);
-                dgvNhanvien.Columns[0].Visible = true;
-                dgvNhanvien.Columns[1].Visible = true;
-                dgvNhanvien.Columns[2].Visible = false;
-                dgvNhanvien.Columns[3].Visible = false;
-                dgvNhanvien.Columns[4].Visible = false;
-                dgvNhanvien.Columns[5].Visible = false;
-                dgvNhanvien.Columns[6].Visible = false;
+                string[] columns = { "ma_nv", "ten_nv" };
+                Ultilities.DataGridViewFormat(dgvNhanvien, columns);
             }
             else
             {
-                MessageBox.Show("Nhập tên danh mục cần tìm!");
+                MessageBox.Show("Nhập tên nhân viên cần tìm!");
                 txtTim.Focus();
             }
         }

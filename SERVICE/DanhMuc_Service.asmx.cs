@@ -32,6 +32,17 @@ namespace SERVICE
         }
 
         [WebMethod]
+        public DataTable DanhMuc_GetByID(int ma_loai)
+        {
+            DataTable mytb = new DataTable("Get_ALL");
+            string query = "select * from PhanLoai where ma_loai ='" + ma_loai + "'";
+            SqlConnection conn = new SqlConnection(connect.ChuoiKetNoi());
+            SqlDataAdapter da = new SqlDataAdapter(query, conn);
+            da.Fill(mytb);
+            return mytb;
+        }
+
+        [WebMethod]
         public DataTable DanhMuc_GetByName(string ten_loai)
         {
             DataTable mytb = new DataTable("Get_ALL");

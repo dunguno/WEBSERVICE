@@ -41,6 +41,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
@@ -50,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Categories.aspx" />
     <Content Include="Contact.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="Images\GUI\americanexpress.jpg" />
@@ -62,32 +65,73 @@
     <Content Include="Images\GUI\logo.png" />
     <Content Include="Images\GUI\mastercard.jpg" />
     <Content Include="Images\GUI\navbg.jpg" />
+    <Content Include="Images\GUI\online.gif" />
     <Content Include="Images\GUI\payoneer.jpg" />
     <Content Include="Images\GUI\skrill.jpg" />
     <Content Include="Images\GUI\ups.jpg" />
-    <Content Include="Images\SanPham\bag.jpg" />
-    <Content Include="Images\SanPham\bag.png" />
-    <Content Include="Images\SanPham\dell.jpg" />
-    <Content Include="Images\SanPham\dell.png" />
-    <Content Include="Images\SanPham\dientunc.jpg" />
-    <Content Include="Images\SanPham\gt1.jpg" />
-    <Content Include="Images\SanPham\iphone.jpg" />
-    <Content Include="Images\SanPham\iphone.png" />
-    <Content Include="Images\SanPham\laptrinhcb.jpg" />
-    <Content Include="Images\SanPham\mangmt.jpg" />
-    <Content Include="Images\SanPham\nicon.jpg" />
-    <Content Include="Images\SanPham\nicon.png" />
-    <Content Include="Images\SanPham\printer.jpg" />
-    <Content Include="Images\SanPham\printer.png" />
-    <Content Include="Images\SanPham\sample.gif" />
-    <Content Include="Images\SanPham\tienganh.jpg" />
-    <Content Include="Images\SanPham\watch.jpg" />
-    <Content Include="Images\SanPham\watch.png" />
+    <Content Include="Images\SanPham\BC-01a.jpg" />
+    <Content Include="Images\SanPham\BC-03a.jpg" />
+    <Content Include="Images\SanPham\BC-04a.jpg" />
+    <Content Include="Images\SanPham\BC-05a.jpg" />
+    <Content Include="Images\SanPham\BC-06a.jpg" />
+    <Content Include="Images\SanPham\BC-07a.jpg" />
+    <Content Include="Images\SanPham\BC-08a.jpg" />
+    <Content Include="Images\SanPham\BC-09a.jpg" />
+    <Content Include="Images\SanPham\BC-10a.jpg" />
+    <Content Include="Images\SanPham\BC-12a.jpg" />
+    <Content Include="Images\SanPham\BC-15a.jpg" />
+    <Content Include="Images\SanPham\BC-16a.jpg" />
+    <Content Include="Images\SanPham\HV-01a.jpg" />
+    <Content Include="Images\SanPham\HV-02a.jpg" />
+    <Content Include="Images\SanPham\HV-03a.jpg" />
+    <Content Include="Images\SanPham\HV-04a.jpg" />
+    <Content Include="Images\SanPham\HV-05a.jpg" />
+    <Content Include="Images\SanPham\HV-06a.jpg" />
+    <Content Include="Images\SanPham\HV-08a.jpg" />
+    <Content Include="Images\SanPham\HV-09a.jpg" />
+    <Content Include="Images\SanPham\HV-10a.jpg" />
+    <Content Include="Images\SanPham\HV-11a.jpg" />
+    <Content Include="Images\SanPham\HV-12a.jpg" />
+    <Content Include="Images\SanPham\sinhnhat_1.jpg" />
+    <Content Include="Images\SanPham\SN-01a.jpg" />
+    <Content Include="Images\SanPham\SN-02a.jpg" />
+    <Content Include="Images\SanPham\SN-03a.jpg" />
+    <Content Include="Images\SanPham\SN-04a.jpg" />
+    <Content Include="Images\SanPham\SN-06a.jpg" />
+    <Content Include="Images\SanPham\SN-07a.jpg" />
+    <Content Include="Images\SanPham\SN-08a.jpg" />
+    <Content Include="Images\SanPham\SN-09a.jpg" />
+    <Content Include="Images\SanPham\SN-10a.jpg" />
+    <Content Include="Images\SanPham\SN-12a.jpg" />
+    <Content Include="Images\SanPham\SN-13a.jpg" />
+    <Content Include="Images\SanPham\tinhyeu_1.jpg" />
+    <Content Include="Images\SanPham\tinhyeu_2.jpg" />
+    <Content Include="Images\SanPham\tinhyeu_3.jpg" />
+    <Content Include="Images\SanPham\tinhyeu_4.jpg" />
+    <Content Include="Images\SanPham\tinhyeu_5.jpg" />
+    <Content Include="Images\SanPham\tinhyeu_6.jpg" />
+    <Content Include="Images\SanPham\tinhyeu_7.jpg" />
     <Content Include="Product.aspx" />
+    <Content Include="ProductDetail.aspx" />
     <Content Include="Register.aspx" />
     <Content Include="Scripts\jquery-1.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
+    <Content Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <None Include="Service References\DanhMuc_Service\DanhMuc_Service.disco" />
+    <None Include="Service References\DanhMuc_Service\configuration91.svcinfo" />
+    <None Include="Service References\DanhMuc_Service\configuration.svcinfo" />
+    <None Include="Service References\DanhMuc_Service\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\SanPham_Service\SanPham_Service.disco" />
+    <None Include="Service References\SanPham_Service\configuration91.svcinfo" />
+    <None Include="Service References\SanPham_Service\configuration.svcinfo" />
+    <None Include="Service References\SanPham_Service\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Style\style.css" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -98,6 +142,13 @@
     </Compile>
     <Compile Include="About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Categories.aspx.cs">
+      <DependentUpon>Categories.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Categories.aspx.designer.cs">
+      <DependentUpon>Categories.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contact.aspx.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
@@ -127,6 +178,13 @@
     <Compile Include="Product.aspx.designer.cs">
       <DependentUpon>Product.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ProductDetail.aspx.cs">
+      <DependentUpon>ProductDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductDetail.aspx.designer.cs">
+      <DependentUpon>ProductDetail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Register.aspx.cs">
       <DependentUpon>Register.aspx</DependentUpon>
@@ -135,18 +193,37 @@
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Service References\DanhMuc_Service\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\SanPham_Service\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="MasterPage\SiteMaster.Master" />
+    <None Include="Service References\DanhMuc_Service\DanhMuc_Service.wsdl" />
+    <None Include="Service References\SanPham_Service\SanPham_Service.wsdl" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\DanhMuc_Service\" />
+    <WCFMetadataStorage Include="Service References\SanPham_Service\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

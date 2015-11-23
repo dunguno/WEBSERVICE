@@ -4,3 +4,15 @@ D:\29. Web Services\WebService\Website\bin\Website.pdb
 D:\29. Web Services\WebService\Website\obj\Debug\Website.dll
 D:\29. Web Services\WebService\Website\obj\Debug\Website.pdb
 D:\29. Web Services\WebService\Website\obj\Debug\Website.csprojResolveAssemblyReference.cache
+D:\29. Web Services\DoAn\WebService_Ver12\Website\bin\Website.dll.config
+D:\29. Web Services\DoAn\WebService_Ver12\Website\bin\Website.dll
+D:\29. Web Services\DoAn\WebService_Ver12\Website\bin\Website.pdb
+D:\29. Web Services\DoAn\WebService_Ver12\Website\obj\Debug\Website.dll
+D:\29. Web Services\DoAn\WebService_Ver12\Website\obj\Debug\Website.pdb
+D:\29. Web Services\DoAn\WebService_Ver12\Website\obj\Debug\Website.csprojResolveAssemblyReference.cache
+C:\Users\Huy Do\Desktop\WebService\Website\bin\Website.dll.config
+C:\Users\Huy Do\Desktop\WebService\Website\bin\Website.dll
+C:\Users\Huy Do\Desktop\WebService\Website\bin\Website.pdb
+C:\Users\Huy Do\Desktop\WebService\Website\obj\Debug\Website.csprojResolveAssemblyReference.cache
+C:\Users\Huy Do\Desktop\WebService\Website\obj\Debug\Website.dll
+C:\Users\Huy Do\Desktop\WebService\Website\obj\Debug\Website.pdb

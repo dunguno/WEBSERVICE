@@ -44,6 +44,7 @@
             this.txtMaNV = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btRefesh = new System.Windows.Forms.Button();
             this.txtTim = new System.Windows.Forms.TextBox();
             this.btSearch = new System.Windows.Forms.Button();
             this.dgvNhanvien = new System.Windows.Forms.DataGridView();
@@ -53,7 +54,7 @@
             this.btEdit = new System.Windows.Forms.Button();
             this.btDel = new System.Windows.Forms.Button();
             this.btAdd = new System.Windows.Forms.Button();
-            this.btRefesh = new System.Windows.Forms.Button();
+            this.btLoad = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanvien)).BeginInit();
             this.panel2.SuspendLayout();
@@ -206,23 +207,33 @@
             this.panel1.Controls.Add(this.txtTim);
             this.panel1.Controls.Add(this.btSearch);
             this.panel1.Controls.Add(this.dgvNhanvien);
-            this.panel1.Location = new System.Drawing.Point(21, 67);
+            this.panel1.Location = new System.Drawing.Point(12, 67);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(310, 285);
+            this.panel1.Size = new System.Drawing.Size(319, 311);
             this.panel1.TabIndex = 20;
+            // 
+            // btRefesh
+            // 
+            this.btRefesh.Image = global::WindowsForms.Properties.Resources.refresh;
+            this.btRefesh.Location = new System.Drawing.Point(266, 14);
+            this.btRefesh.Name = "btRefesh";
+            this.btRefesh.Size = new System.Drawing.Size(45, 29);
+            this.btRefesh.TabIndex = 15;
+            this.btRefesh.UseVisualStyleBackColor = true;
+            this.btRefesh.Click += new System.EventHandler(this.btRefesh_Click);
             // 
             // txtTim
             // 
             this.txtTim.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtTim.Location = new System.Drawing.Point(18, 9);
+            this.txtTim.Location = new System.Drawing.Point(10, 15);
             this.txtTim.Name = "txtTim";
-            this.txtTim.Size = new System.Drawing.Size(177, 26);
+            this.txtTim.Size = new System.Drawing.Size(194, 26);
             this.txtTim.TabIndex = 8;
             // 
             // btSearch
             // 
             this.btSearch.Image = global::WindowsForms.Properties.Resources.search;
-            this.btSearch.Location = new System.Drawing.Point(201, 9);
+            this.btSearch.Location = new System.Drawing.Point(213, 14);
             this.btSearch.Name = "btSearch";
             this.btSearch.Size = new System.Drawing.Size(45, 29);
             this.btSearch.TabIndex = 14;
@@ -235,9 +246,9 @@
             this.dgvNhanvien.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ma_nv,
             this.ten_nv});
-            this.dgvNhanvien.Location = new System.Drawing.Point(18, 41);
+            this.dgvNhanvien.Location = new System.Drawing.Point(10, 56);
             this.dgvNhanvien.Name = "dgvNhanvien";
-            this.dgvNhanvien.Size = new System.Drawing.Size(274, 234);
+            this.dgvNhanvien.Size = new System.Drawing.Size(301, 239);
             this.dgvNhanvien.TabIndex = 9;
             this.dgvNhanvien.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvNhanvien_MouseClick);
             // 
@@ -280,52 +291,57 @@
             // 
             // btEdit
             // 
+            this.btEdit.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btEdit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btEdit.Location = new System.Drawing.Point(233, 375);
+            this.btEdit.Location = new System.Drawing.Point(174, 402);
             this.btEdit.Name = "btEdit";
-            this.btEdit.Size = new System.Drawing.Size(80, 43);
+            this.btEdit.Size = new System.Drawing.Size(75, 31);
             this.btEdit.TabIndex = 19;
             this.btEdit.Text = "Sửa";
-            this.btEdit.UseVisualStyleBackColor = true;
+            this.btEdit.UseVisualStyleBackColor = false;
             this.btEdit.Click += new System.EventHandler(this.btEdit_Click);
             // 
             // btDel
             // 
+            this.btDel.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btDel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btDel.Location = new System.Drawing.Point(137, 375);
+            this.btDel.Location = new System.Drawing.Point(93, 402);
             this.btDel.Name = "btDel";
-            this.btDel.Size = new System.Drawing.Size(80, 43);
+            this.btDel.Size = new System.Drawing.Size(75, 31);
             this.btDel.TabIndex = 18;
             this.btDel.Text = "Xóa";
-            this.btDel.UseVisualStyleBackColor = true;
+            this.btDel.UseVisualStyleBackColor = false;
             this.btDel.Click += new System.EventHandler(this.btDel_Click);
             // 
             // btAdd
             // 
+            this.btAdd.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btAdd.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btAdd.Location = new System.Drawing.Point(39, 375);
+            this.btAdd.Location = new System.Drawing.Point(12, 402);
             this.btAdd.Name = "btAdd";
-            this.btAdd.Size = new System.Drawing.Size(80, 43);
+            this.btAdd.Size = new System.Drawing.Size(75, 31);
             this.btAdd.TabIndex = 17;
             this.btAdd.Text = "Thêm";
-            this.btAdd.UseVisualStyleBackColor = true;
+            this.btAdd.UseVisualStyleBackColor = false;
             this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
-            // btRefesh
+            // btLoad
             // 
-            this.btRefesh.Image = global::WindowsForms.Properties.Resources.refresh;
-            this.btRefesh.Location = new System.Drawing.Point(247, 9);
-            this.btRefesh.Name = "btRefesh";
-            this.btRefesh.Size = new System.Drawing.Size(45, 29);
-            this.btRefesh.TabIndex = 15;
-            this.btRefesh.UseVisualStyleBackColor = true;
-            this.btRefesh.Click += new System.EventHandler(this.btRefesh_Click);
+            this.btLoad.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btLoad.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btLoad.Location = new System.Drawing.Point(255, 402);
+            this.btLoad.Name = "btLoad";
+            this.btLoad.Size = new System.Drawing.Size(75, 31);
+            this.btLoad.TabIndex = 22;
+            this.btLoad.Text = "Load";
+            this.btLoad.UseVisualStyleBackColor = false;
             // 
             // NhanVien_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(727, 453);
+            this.Controls.Add(this.btLoad);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.btEdit);
@@ -373,5 +389,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ma_nv;
         private System.Windows.Forms.DataGridViewTextBoxColumn ten_nv;
         private System.Windows.Forms.Button btRefesh;
+        private System.Windows.Forms.Button btLoad;
     }
 }

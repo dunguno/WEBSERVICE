@@ -62,6 +62,37 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="NhanVien_GetName">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ma_nv" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NhanVien_GetNameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NhanVien_GetNameResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="NhanVien_Load">
+        <s:complexType />
+      </s:element>
+      <s:element name="NhanVien_LoadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="NhanVien_LoadResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="Delete_NhanVien">
         <s:complexType>
           <s:sequence>
@@ -135,6 +166,18 @@
   <wsdl:message name="NhanVien_GetByNameSoapOut">
     <wsdl:part name="parameters" element="tns:NhanVien_GetByNameResponse" />
   </wsdl:message>
+  <wsdl:message name="NhanVien_GetNameSoapIn">
+    <wsdl:part name="parameters" element="tns:NhanVien_GetName" />
+  </wsdl:message>
+  <wsdl:message name="NhanVien_GetNameSoapOut">
+    <wsdl:part name="parameters" element="tns:NhanVien_GetNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="NhanVien_LoadSoapIn">
+    <wsdl:part name="parameters" element="tns:NhanVien_Load" />
+  </wsdl:message>
+  <wsdl:message name="NhanVien_LoadSoapOut">
+    <wsdl:part name="parameters" element="tns:NhanVien_LoadResponse" />
+  </wsdl:message>
   <wsdl:message name="Delete_NhanVienSoapIn">
     <wsdl:part name="parameters" element="tns:Delete_NhanVien" />
   </wsdl:message>
@@ -165,6 +208,14 @@
     <wsdl:operation name="NhanVien_GetByName">
       <wsdl:input message="tns:NhanVien_GetByNameSoapIn" />
       <wsdl:output message="tns:NhanVien_GetByNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NhanVien_GetName">
+      <wsdl:input message="tns:NhanVien_GetNameSoapIn" />
+      <wsdl:output message="tns:NhanVien_GetNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="NhanVien_Load">
+      <wsdl:input message="tns:NhanVien_LoadSoapIn" />
+      <wsdl:output message="tns:NhanVien_LoadSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="Delete_NhanVien">
       <wsdl:input message="tns:Delete_NhanVienSoapIn" />
@@ -201,6 +252,24 @@
     </wsdl:operation>
     <wsdl:operation name="NhanVien_GetByName">
       <soap:operation soapAction="http://tempuri.org/NhanVien_GetByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NhanVien_GetName">
+      <soap:operation soapAction="http://tempuri.org/NhanVien_GetName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NhanVien_Load">
+      <soap:operation soapAction="http://tempuri.org/NhanVien_Load" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -258,6 +327,24 @@
     </wsdl:operation>
     <wsdl:operation name="NhanVien_GetByName">
       <soap12:operation soapAction="http://tempuri.org/NhanVien_GetByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NhanVien_GetName">
+      <soap12:operation soapAction="http://tempuri.org/NhanVien_GetName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="NhanVien_Load">
+      <soap12:operation soapAction="http://tempuri.org/NhanVien_Load" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

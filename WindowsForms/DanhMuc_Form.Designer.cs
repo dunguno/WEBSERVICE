@@ -37,13 +37,13 @@
             this.txtMaDM = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btRefresh = new System.Windows.Forms.Button();
             this.dgvDanhmuc = new System.Windows.Forms.DataGridView();
             this.ma_loai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ten_loai = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtTim = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btRefresh = new System.Windows.Forms.Button();
             this.btTim = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhmuc)).BeginInit();
@@ -67,35 +67,38 @@
             // 
             // btEdit
             // 
+            this.btEdit.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btEdit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btEdit.Location = new System.Drawing.Point(312, 68);
             this.btEdit.Name = "btEdit";
             this.btEdit.Size = new System.Drawing.Size(75, 31);
             this.btEdit.TabIndex = 6;
-            this.btEdit.Text = "Sửa";
-            this.btEdit.UseVisualStyleBackColor = true;
+            this.btEdit.Text = "Cập nhật";
+            this.btEdit.UseVisualStyleBackColor = false;
             this.btEdit.Click += new System.EventHandler(this.btEdit_Click);
             // 
             // btDel
             // 
+            this.btDel.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btDel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btDel.Location = new System.Drawing.Point(208, 68);
+            this.btDel.Location = new System.Drawing.Point(207, 68);
             this.btDel.Name = "btDel";
             this.btDel.Size = new System.Drawing.Size(75, 31);
             this.btDel.TabIndex = 5;
             this.btDel.Text = "Xóa";
-            this.btDel.UseVisualStyleBackColor = true;
+            this.btDel.UseVisualStyleBackColor = false;
             this.btDel.Click += new System.EventHandler(this.btDel_Click);
             // 
             // btAdd
             // 
+            this.btAdd.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btAdd.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btAdd.Location = new System.Drawing.Point(101, 68);
             this.btAdd.Name = "btAdd";
             this.btAdd.Size = new System.Drawing.Size(75, 31);
             this.btAdd.TabIndex = 4;
             this.btAdd.Text = "Thêm";
-            this.btAdd.UseVisualStyleBackColor = true;
+            this.btAdd.UseVisualStyleBackColor = false;
             this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
             // txtTenDM
@@ -149,6 +152,18 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tìm kiếm";
             // 
+            // btRefresh
+            // 
+            this.btRefresh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btRefresh.Image = global::WindowsForms.Properties.Resources.refresh;
+            this.btRefresh.Location = new System.Drawing.Point(335, 21);
+            this.btRefresh.Name = "btRefresh";
+            this.btRefresh.Size = new System.Drawing.Size(42, 27);
+            this.btRefresh.TabIndex = 3;
+            this.btRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
+            this.btRefresh.UseVisualStyleBackColor = true;
+            this.btRefresh.Click += new System.EventHandler(this.btRefresh_Click);
+            // 
             // dgvDanhmuc
             // 
             this.dgvDanhmuc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -185,28 +200,6 @@
             this.txtTim.Size = new System.Drawing.Size(262, 27);
             this.txtTim.TabIndex = 1;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(91, 31);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(337, 32);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "DANH MỤC SẢN PHẨM";
-            // 
-            // btRefresh
-            // 
-            this.btRefresh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btRefresh.Image = global::WindowsForms.Properties.Resources.refresh;
-            this.btRefresh.Location = new System.Drawing.Point(335, 21);
-            this.btRefresh.Name = "btRefresh";
-            this.btRefresh.Size = new System.Drawing.Size(42, 27);
-            this.btRefresh.TabIndex = 3;
-            this.btRefresh.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btRefresh.UseVisualStyleBackColor = true;
-            this.btRefresh.Click += new System.EventHandler(this.btRefresh_Click);
-            // 
             // btTim
             // 
             this.btTim.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -218,6 +211,16 @@
             this.btTim.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btTim.UseVisualStyleBackColor = true;
             this.btTim.Click += new System.EventHandler(this.btTim_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.Location = new System.Drawing.Point(91, 31);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(337, 32);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "DANH MỤC SẢN PHẨM";
             // 
             // DanhMuc_Form
             // 

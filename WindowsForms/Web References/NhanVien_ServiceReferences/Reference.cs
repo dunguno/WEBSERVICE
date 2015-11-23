@@ -36,6 +36,10 @@ namespace WindowsForms.NhanVien_ServiceReferences {
         
         private System.Threading.SendOrPostCallback NhanVien_GetByNameOperationCompleted;
         
+        private System.Threading.SendOrPostCallback NhanVien_GetNameOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback NhanVien_LoadOperationCompleted;
+        
         private System.Threading.SendOrPostCallback Delete_NhanVienOperationCompleted;
         
         private System.Threading.SendOrPostCallback Update_NhanVienOperationCompleted;
@@ -88,6 +92,12 @@ namespace WindowsForms.NhanVien_ServiceReferences {
         
         /// <remarks/>
         public event NhanVien_GetByNameCompletedEventHandler NhanVien_GetByNameCompleted;
+        
+        /// <remarks/>
+        public event NhanVien_GetNameCompletedEventHandler NhanVien_GetNameCompleted;
+        
+        /// <remarks/>
+        public event NhanVien_LoadCompletedEventHandler NhanVien_LoadCompleted;
         
         /// <remarks/>
         public event Delete_NhanVienCompletedEventHandler Delete_NhanVienCompleted;
@@ -182,6 +192,62 @@ namespace WindowsForms.NhanVien_ServiceReferences {
             if ((this.NhanVien_GetByNameCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.NhanVien_GetByNameCompleted(this, new NhanVien_GetByNameCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/NhanVien_GetName", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string NhanVien_GetName(int ma_nv) {
+            object[] results = this.Invoke("NhanVien_GetName", new object[] {
+                        ma_nv});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void NhanVien_GetNameAsync(int ma_nv) {
+            this.NhanVien_GetNameAsync(ma_nv, null);
+        }
+        
+        /// <remarks/>
+        public void NhanVien_GetNameAsync(int ma_nv, object userState) {
+            if ((this.NhanVien_GetNameOperationCompleted == null)) {
+                this.NhanVien_GetNameOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNhanVien_GetNameOperationCompleted);
+            }
+            this.InvokeAsync("NhanVien_GetName", new object[] {
+                        ma_nv}, this.NhanVien_GetNameOperationCompleted, userState);
+        }
+        
+        private void OnNhanVien_GetNameOperationCompleted(object arg) {
+            if ((this.NhanVien_GetNameCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.NhanVien_GetNameCompleted(this, new NhanVien_GetNameCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/NhanVien_Load", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataTable NhanVien_Load() {
+            object[] results = this.Invoke("NhanVien_Load", new object[0]);
+            return ((System.Data.DataTable)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void NhanVien_LoadAsync() {
+            this.NhanVien_LoadAsync(null);
+        }
+        
+        /// <remarks/>
+        public void NhanVien_LoadAsync(object userState) {
+            if ((this.NhanVien_LoadOperationCompleted == null)) {
+                this.NhanVien_LoadOperationCompleted = new System.Threading.SendOrPostCallback(this.OnNhanVien_LoadOperationCompleted);
+            }
+            this.InvokeAsync("NhanVien_Load", new object[0], this.NhanVien_LoadOperationCompleted, userState);
+        }
+        
+        private void OnNhanVien_LoadOperationCompleted(object arg) {
+            if ((this.NhanVien_LoadCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.NhanVien_LoadCompleted(this, new NhanVien_LoadCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -378,6 +444,58 @@ namespace WindowsForms.NhanVien_ServiceReferences {
         private object[] results;
         
         internal NhanVien_GetByNameCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void NhanVien_GetNameCompletedEventHandler(object sender, NhanVien_GetNameCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class NhanVien_GetNameCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal NhanVien_GetNameCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void NhanVien_LoadCompletedEventHandler(object sender, NhanVien_LoadCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class NhanVien_LoadCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal NhanVien_LoadCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

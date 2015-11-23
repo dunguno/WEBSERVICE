@@ -54,6 +54,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ChiTietDonHang_Service.asmx" />
     <Content Include="Connect_Service.asmx" />
     <Content Include="DanhMuc_Service.asmx" />
     <None Include="Service References\Connect_ServiceReference\configuration91.svcinfo" />
@@ -62,10 +63,17 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="DonHang_Service.asmx" />
+    <Content Include="KhachHang_Service.asmx" />
     <Content Include="NhanVien_Service.asmx" />
+    <Content Include="SanPham_Service.asmx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiTietDonHang_Service.asmx.cs">
+      <DependentUpon>ChiTietDonHang_Service.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Connect_Service.asmx.cs">
       <DependentUpon>Connect_Service.asmx</DependentUpon>
       <SubType>Component</SubType>
@@ -74,11 +82,23 @@
       <DependentUpon>DanhMuc_Service.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="DonHang_Service.asmx.cs">
+      <DependentUpon>DonHang_Service.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="KhachHang_Service.asmx.cs">
+      <DependentUpon>KhachHang_Service.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="NhanVien_Service.asmx.cs">
       <DependentUpon>NhanVien_Service.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SanPham_Service.asmx.cs">
+      <DependentUpon>SanPham_Service.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Service References\Connect_ServiceReference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
