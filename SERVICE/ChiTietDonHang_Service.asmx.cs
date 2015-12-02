@@ -31,5 +31,67 @@ namespace SERVICE
             return mytb;
         }
 
+        [WebMethod]
+        public bool Delete_ChiTietDonHang(int ma_dh)
+        {
+            try
+            {
+                string sql = "delete from ChiTietDonHang where ma_donhang = '" + ma_dh + "' ";
+                SqlConnection conn = new SqlConnection(connect.ChuoiKetNoi());
+                SqlCommand cm = new SqlCommand();
+                cm.Connection = conn;
+                cm.CommandText = sql;
+                cm.CommandType = CommandType.Text;
+                conn.Open();
+                cm.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        [WebMethod]
+        public bool Insert_ChiTietDonHang(int ma_dh, int ma_sp, int soluong, int gia)
+        {
+            try
+            {
+                string sql = "INSERT INTO ChiTietDonHang VALUES(N'" + ma_dh + "',N'" + ma_sp + "',N'" + soluong + "',N'" + gia + "')";
+                SqlConnection conn = new SqlConnection(connect.ChuoiKetNoi());
+                SqlCommand cm = new SqlCommand();
+                cm.Connection = conn;
+                cm.CommandText = sql;
+                cm.CommandType = CommandType.Text;
+                conn.Open();
+                cm.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        [WebMethod]
+        public bool Update_ChiTietDonHang(int ma_donhang, int ma_sp, int soluong, int gia)
+        {
+            try
+            {
+                string sql = "UPDATE ChiTietDonHang SET ma_sp=N'" + ma_sp + "',soluong=N'" + soluong + "', gia=N'" + gia + "' WHERE ma_donhang =N'" + ma_donhang + "'";
+                SqlConnection conn = new SqlConnection(connect.ChuoiKetNoi());
+                SqlCommand cm = new SqlCommand();
+                cm.Connection = conn;
+                cm.CommandText = sql;
+                cm.CommandType = CommandType.Text;
+                conn.Open();
+                cm.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }

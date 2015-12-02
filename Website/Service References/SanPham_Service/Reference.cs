@@ -28,6 +28,18 @@ namespace Website.SanPham_Service {
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         System.Data.DataTable SanPham_GetByCategories(int ma_loai);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SanPham_Search", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataTable SanPham_Search(string search);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SanPham_SearchAdvanced", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataTable SanPham_SearchAdvanced(string ten_sp, int loai, int giaMin, int giaMax);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/SanPham_GetByPrice_Between", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataTable SanPham_GetByPrice_Between(int gia1, int gia2);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/Delete_SanPham", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         bool Delete_SanPham(int ma_sp);
@@ -98,6 +110,18 @@ namespace Website.SanPham_Service {
         
         public System.Data.DataTable SanPham_GetByCategories(int ma_loai) {
             return base.Channel.SanPham_GetByCategories(ma_loai);
+        }
+        
+        public System.Data.DataTable SanPham_Search(string search) {
+            return base.Channel.SanPham_Search(search);
+        }
+        
+        public System.Data.DataTable SanPham_SearchAdvanced(string ten_sp, int loai, int giaMin, int giaMax) {
+            return base.Channel.SanPham_SearchAdvanced(ten_sp, loai, giaMin, giaMax);
+        }
+        
+        public System.Data.DataTable SanPham_GetByPrice_Between(int gia1, int gia2) {
+            return base.Channel.SanPham_GetByPrice_Between(gia1, gia2);
         }
         
         public bool Delete_SanPham(int ma_sp) {

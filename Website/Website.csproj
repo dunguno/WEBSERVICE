@@ -52,8 +52,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="About.aspx" />
+    <Content Include="Cart.aspx" />
     <Content Include="Categories.aspx" />
     <Content Include="Contact.aspx" />
+    <Content Include="Customer.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="Images\GUI\americanexpress.jpg" />
     <Content Include="Images\GUI\banner.png" />
@@ -111,6 +113,8 @@
     <Content Include="Images\SanPham\tinhyeu_5.jpg" />
     <Content Include="Images\SanPham\tinhyeu_6.jpg" />
     <Content Include="Images\SanPham\tinhyeu_7.jpg" />
+    <Content Include="ListOrder.aspx" />
+    <Content Include="Price.aspx" />
     <Content Include="Product.aspx" />
     <Content Include="ProductDetail.aspx" />
     <Content Include="Register.aspx" />
@@ -118,6 +122,7 @@
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
     <Content Include="Properties\DataSources\System.Data.DataTable.datasource" />
+    <None Include="Service References\ChiTietDonHang_Service\ChiTietDonHang_Service.wsdl" />
     <None Include="Service References\DanhMuc_Service\DanhMuc_Service.disco" />
     <None Include="Service References\DanhMuc_Service\configuration91.svcinfo" />
     <None Include="Service References\DanhMuc_Service\configuration.svcinfo" />
@@ -125,10 +130,33 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\DonHang_Service\DonHang_Service.wsdl" />
+    <None Include="Service References\KhachHang_Service\KhachHang_Service.wsdl" />
     <None Include="Service References\SanPham_Service\SanPham_Service.disco" />
     <None Include="Service References\SanPham_Service\configuration91.svcinfo" />
     <None Include="Service References\SanPham_Service\configuration.svcinfo" />
     <None Include="Service References\SanPham_Service\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\KhachHang_Service\KhachHang_Service.disco" />
+    <None Include="Service References\KhachHang_Service\configuration91.svcinfo" />
+    <None Include="Service References\KhachHang_Service\configuration.svcinfo" />
+    <None Include="Service References\KhachHang_Service\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\DonHang_Service\DonHang_Service.disco" />
+    <None Include="Service References\DonHang_Service\configuration91.svcinfo" />
+    <None Include="Service References\DonHang_Service\configuration.svcinfo" />
+    <None Include="Service References\DonHang_Service\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ChiTietDonHang_Service\ChiTietDonHang_Service.disco" />
+    <None Include="Service References\ChiTietDonHang_Service\configuration91.svcinfo" />
+    <None Include="Service References\ChiTietDonHang_Service\configuration.svcinfo" />
+    <None Include="Service References\ChiTietDonHang_Service\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
@@ -142,6 +170,13 @@
     </Compile>
     <Compile Include="About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cart.aspx.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cart.aspx.designer.cs">
+      <DependentUpon>Cart.aspx</DependentUpon>
     </Compile>
     <Compile Include="Categories.aspx.cs">
       <DependentUpon>Categories.aspx</DependentUpon>
@@ -157,6 +192,13 @@
     <Compile Include="Contact.aspx.designer.cs">
       <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Customer.aspx.cs">
+      <DependentUpon>Customer.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Customer.aspx.designer.cs">
+      <DependentUpon>Customer.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -164,12 +206,26 @@
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ListOrder.aspx.cs">
+      <DependentUpon>ListOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ListOrder.aspx.designer.cs">
+      <DependentUpon>ListOrder.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MasterPage\SiteMaster.Master.cs">
       <DependentUpon>SiteMaster.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="MasterPage\SiteMaster.Master.designer.cs">
       <DependentUpon>SiteMaster.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Price.aspx.cs">
+      <DependentUpon>Price.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Price.aspx.designer.cs">
+      <DependentUpon>Price.aspx</DependentUpon>
     </Compile>
     <Compile Include="Product.aspx.cs">
       <DependentUpon>Product.aspx</DependentUpon>
@@ -193,7 +249,22 @@
     <Compile Include="Register.aspx.designer.cs">
       <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Service References\ChiTietDonHang_Service\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\DanhMuc_Service\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\DonHang_Service\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\KhachHang_Service\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -213,6 +284,7 @@
     <None Include="Service References\SanPham_Service\SanPham_Service.wsdl" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
+      <SubType>Designer</SubType>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -222,7 +294,10 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ChiTietDonHang_Service\" />
     <WCFMetadataStorage Include="Service References\DanhMuc_Service\" />
+    <WCFMetadataStorage Include="Service References\DonHang_Service\" />
+    <WCFMetadataStorage Include="Service References\KhachHang_Service\" />
     <WCFMetadataStorage Include="Service References\SanPham_Service\" />
   </ItemGroup>
   <PropertyGroup>

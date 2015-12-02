@@ -70,5 +70,12 @@ namespace WindowsForms
             frm.ShowDialog();
             LoadData();
         }
+
+        private void btSearch_Click(object sender, EventArgs e)
+        {
+            dgvSanPham.DataSource = sanpham.SanPham_Search(txtSearch.Text);
+            string[] columns = { "ma_sp", "ten_sp", "mo_ta", "gia", "phan_loai" };
+            Ultilities.DataGridViewFormat(dgvSanPham, columns);
+        }
     }
 }

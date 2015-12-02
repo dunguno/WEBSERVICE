@@ -10,9 +10,20 @@ C:\Users\Huy Do\Desktop\WebService\SERVICE\bin\SERVICE.pdb
 C:\Users\Huy Do\Desktop\WebService\SERVICE\obj\Debug\SERVICE.csprojResolveAssemblyReference.cache
 C:\Users\Huy Do\Desktop\WebService\SERVICE\obj\Debug\SERVICE.dll
 C:\Users\Huy Do\Desktop\WebService\SERVICE\obj\Debug\SERVICE.pdb
-D:\SGU DATA\NAM V\WEB SERVICE\WebService_Ver15\WebService_Ver15\SERVICE\bin\SERVICE.dll.config
-D:\SGU DATA\NAM V\WEB SERVICE\WebService_Ver15\WebService_Ver15\SERVICE\bin\SERVICE.dll
-D:\SGU DATA\NAM V\WEB SERVICE\WebService_Ver15\WebService_Ver15\SERVICE\bin\SERVICE.pdb
-D:\SGU DATA\NAM V\WEB SERVICE\WebService_Ver15\WebService_Ver15\SERVICE\obj\Debug\SERVICE.csprojResolveAssemblyReference.cache
-D:\SGU DATA\NAM V\WEB SERVICE\WebService_Ver15\WebService_Ver15\SERVICE\obj\Debug\SERVICE.dll
-D:\SGU DATA\NAM V\WEB SERVICE\WebService_Ver15\WebService_Ver15\SERVICE\obj\Debug\SERVICE.pdb
+C:\Users\Huy Do\Desktop\WebService_Ver15\SERVICE\bin\SERVICE.dll.config
+C:\Users\Huy Do\Desktop\WebService_Ver15\SERVICE\bin\SERVICE.dll
+C:\Users\Huy Do\Desktop\WebService_Ver15\SERVICE\bin\SERVICE.pdb
+C:\Users\Huy Do\Desktop\WebService_Ver15\SERVICE\obj\Debug\SERVICE.dll
+C:\Users\Huy Do\Desktop\WebService_Ver15\SERVICE\obj\Debug\SERVICE.pdb
+C:\Users\Huy Do\Desktop\WebService_Ver15\SERVICE\obj\Debug\SERVICE.csprojResolveAssemblyReference.cache
+C:\Users\Huy Do\Desktop\WebService_Ver16\SERVICE\bin\SERVICE.dll.config
+C:\Users\Huy Do\Desktop\WebService_Ver16\SERVICE\bin\SERVICE.dll
+C:\Users\Huy Do\Desktop\WebService_Ver16\SERVICE\bin\SERVICE.pdb
+C:\Users\Huy Do\Desktop\WebService_Ver16\SERVICE\obj\Debug\SERVICE.dll
+C:\Users\Huy Do\Desktop\WebService_Ver16\SERVICE\obj\Debug\SERVICE.pdb
+D:\SGU DATA\NAM V\WEB SERVICE\WebService_Ver16\WebService_Ver16\SERVICE\bin\SERVICE.dll.config
+D:\SGU DATA\NAM V\WEB SERVICE\WebService_Ver16\WebService_Ver16\SERVICE\bin\SERVICE.dll
+D:\SGU DATA\NAM V\WEB SERVICE\WebService_Ver16\WebService_Ver16\SERVICE\bin\SERVICE.pdb
+D:\SGU DATA\NAM V\WEB SERVICE\WebService_Ver16\WebService_Ver16\SERVICE\obj\Debug\SERVICE.csprojResolveAssemblyReference.cache
+D:\SGU DATA\NAM V\WEB SERVICE\WebService_Ver16\WebService_Ver16\SERVICE\obj\Debug\SERVICE.dll
+D:\SGU DATA\NAM V\WEB SERVICE\WebService_Ver16\WebService_Ver16\SERVICE\obj\Debug\SERVICE.pdb

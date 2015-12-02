@@ -18,7 +18,6 @@ namespace SERVICE
     // [System.Web.Script.Services.ScriptService]
     public class KhachHang_Service : System.Web.Services.WebService
     {
-
         Connect_ServiceReference.Connect_ServiceSoapClient connect = new Connect_ServiceReference.Connect_ServiceSoapClient();
 
         [WebMethod]
@@ -52,10 +51,44 @@ namespace SERVICE
         }
 
         [WebMethod]
+        public DataTable KhachHang_GetByID(int ma_kh)
+        {
+            DataTable mytb = new DataTable("Get_ByID");
+            string query = "select * from KhachHang where ma_kh = '" + ma_kh + "'";
+            SqlConnection conn = new SqlConnection(connect.ChuoiKetNoi());
+            SqlDataAdapter da = new SqlDataAdapter(query, conn);
+            da.Fill(mytb);
+            return mytb;
+        }
+
+
+        [WebMethod]
         public DataTable KhachHang_GetByName(string ten_kh)
         {
             DataTable mytb = new DataTable("Get_ByName");
             string query = "select * from KhachHang where hoten LIKE '%" + ten_kh + "%'";
+            SqlConnection conn = new SqlConnection(connect.ChuoiKetNoi());
+            SqlDataAdapter da = new SqlDataAdapter(query, conn);
+            da.Fill(mytb);
+            return mytb;
+        }
+
+        [WebMethod]
+        public DataTable KhachHang_GetByUsername(string username)
+        {
+            DataTable mytb = new DataTable("Get_ByName");
+            string query = "select * from KhachHang where username = '" + username + "'";
+            SqlConnection conn = new SqlConnection(connect.ChuoiKetNoi());
+            SqlDataAdapter da = new SqlDataAdapter(query, conn);
+            da.Fill(mytb);
+            return mytb;
+        }
+
+        [WebMethod]
+        public DataTable KhachHang_CheckUsername(string username)
+        {
+            DataTable mytb = new DataTable("Get_ByName");
+            string query = "select * from KhachHang where username = '" + username + "'";
             SqlConnection conn = new SqlConnection(connect.ChuoiKetNoi());
             SqlDataAdapter da = new SqlDataAdapter(query, conn);
             da.Fill(mytb);
@@ -83,7 +116,7 @@ namespace SERVICE
             }
         }
 
-         [WebMethod]
+        [WebMethod]
         public bool Update_KhachHang(int ma_kh, string hoten, string sdt, string diachi, string email, string username, string pass)
         {
             try
@@ -105,7 +138,7 @@ namespace SERVICE
         }
 
         [WebMethod]
-         public bool Insert_KhachHang(string hoten, string sdt, string diachi, string email, string username, string pass)
+        public bool Insert_KhachHang(string hoten, string sdt, string diachi, string email, string username, string pass)
          {
              try
              {

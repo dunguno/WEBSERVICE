@@ -43,7 +43,7 @@ namespace WindowsForms
             txtTenSP.Text = dr["ten_sp"].ToString();
             txtMota.Text = dr["mo_ta"].ToString();
             txtGia.Text = dr["gia"].ToString();
-            //txtUrl.Text = dr["hinh"].ToString();
+            TenAnh = dr["hinh"].ToString();
             cbDanhmuc.Text = sanpham.GetDanhMuc(int.Parse(dr["phan_loai"].ToString()));
             string url = System.IO.Directory.GetCurrentDirectory().Replace("\\WindowsForms\\bin\\Debug", "\\Website\\Images\\SanPham\\" + dr["hinh"].ToString());
             pictureBoxSP.Image = Image.FromFile(url);
@@ -52,7 +52,7 @@ namespace WindowsForms
 
         private void btRefresh_Click(object sender, EventArgs e)
         {
-            txtMaSP.Text = "";
+            //txtMaSP.Text = "";
             txtTenSP.Text = "";
             txtMota.Text = "";
             txtGia.Text = "";
@@ -88,7 +88,7 @@ namespace WindowsForms
             txtTenSP.Text = dr["ten_sp"].ToString();
             txtMota.Text = dr["mo_ta"].ToString();
             txtGia.Text = dr["gia"].ToString();
-            //txtUrl.Text = dr["hinh"].ToString();
+            TenAnh = dr["hinh"].ToString();
             cbDanhmuc.Text = sanpham.GetDanhMuc(int.Parse(dr["phan_loai"].ToString()));
             string url = System.IO.Directory.GetCurrentDirectory().Replace("\\WindowsForms\\bin\\Debug", "\\Website\\Images\\SanPham\\" + dr["hinh"].ToString());
             pictureBoxSP.Image = Image.FromFile(url);
@@ -111,9 +111,10 @@ namespace WindowsForms
         private void btSave_Click(object sender, EventArgs e)
         {
             SanPham_ServiceReferences.SanPham_Service sp = new SanPham_ServiceReferences.SanPham_Service();
+
             if (_ma_sp == 0)
             {
-                if (sp.Insert_SanPham(txtTenSP.Text, txtMota.Text, decimal.Parse(txtGia.Text), TenAnh, int.Parse(cbDanhmuc.SelectedValue.ToString())))
+                if (sanpham.Insert_SanPham(txtTenSP.Text, txtMota.Text, decimal.Parse(txtGia.Text), TenAnh, int.Parse(cbDanhmuc.SelectedValue.ToString())))
                 {
                     MessageBox.Show("Thêm mới thành công!");
                     this.Close();
@@ -122,7 +123,7 @@ namespace WindowsForms
             }
             else
             {
-                if (sp.Update_SanPham(_ma_sp, txtTenSP.Text, txtMota.Text, decimal.Parse(txtGia.Text), TenAnh, int.Parse(cbDanhmuc.SelectedValue.ToString())))
+                if (sanpham.Update_SanPham(_ma_sp, txtTenSP.Text, txtMota.Text, decimal.Parse(txtGia.Text), TenAnh, int.Parse(cbDanhmuc.SelectedValue.ToString())))
                 {
                     MessageBox.Show("Cập nhật thông tin thành công!");
                     this.Close();
@@ -181,11 +182,6 @@ namespace WindowsForms
                 if (!File.Exists(newPathToFile))
                     System.IO.File.Copy(PathToFile, newPathToFile, true);
             }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            txtMota.Text = TenAnh;
         }
 
         public void ShowImage(string ten)

@@ -5,7 +5,7 @@
     <div id="our_product">
         <h2><asp:Label ID="txtDanhMuc" runat="server"></asp:Label></h2>
         <%--<form id="formSanPham_ByCat" runat="server">--%>
-        <asp:DataList ID="DataListSP_ByCat" runat="server" RepeatColumns="3" Width="100%" Height="100%">
+        <asp:DataList ID="DataListSP_ByCat" runat="server" DataKeyField="ma_sp" OnItemCommand="DataListSP_ItemCommand_ByCat" RepeatColumns="3" Width="100%" Height="100%">
                     <ItemTemplate>
                         <br />
                         <asp:Image ID="ImageSP" runat="server" ImageUrl='<%# Eval("hinh", "~/Images/SanPham/{0}") %>' Height="150px" Width="150px" />

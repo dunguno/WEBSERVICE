@@ -40,6 +40,48 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="SanPham_Search">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="search" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SanPham_SearchResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SanPham_SearchResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SanPham_GetByCategories">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ma_loai" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SanPham_GetByCategoriesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SanPham_GetByCategoriesResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="Delete_SanPham">
         <s:complexType>
           <s:sequence>
@@ -181,6 +223,18 @@
   <wsdl:message name="SanPham_GetByIDSoapOut">
     <wsdl:part name="parameters" element="tns:SanPham_GetByIDResponse" />
   </wsdl:message>
+  <wsdl:message name="SanPham_SearchSoapIn">
+    <wsdl:part name="parameters" element="tns:SanPham_Search" />
+  </wsdl:message>
+  <wsdl:message name="SanPham_SearchSoapOut">
+    <wsdl:part name="parameters" element="tns:SanPham_SearchResponse" />
+  </wsdl:message>
+  <wsdl:message name="SanPham_GetByCategoriesSoapIn">
+    <wsdl:part name="parameters" element="tns:SanPham_GetByCategories" />
+  </wsdl:message>
+  <wsdl:message name="SanPham_GetByCategoriesSoapOut">
+    <wsdl:part name="parameters" element="tns:SanPham_GetByCategoriesResponse" />
+  </wsdl:message>
   <wsdl:message name="Delete_SanPhamSoapIn">
     <wsdl:part name="parameters" element="tns:Delete_SanPham" />
   </wsdl:message>
@@ -238,6 +292,14 @@
       <wsdl:input message="tns:SanPham_GetByIDSoapIn" />
       <wsdl:output message="tns:SanPham_GetByIDSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="SanPham_Search">
+      <wsdl:input message="tns:SanPham_SearchSoapIn" />
+      <wsdl:output message="tns:SanPham_SearchSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SanPham_GetByCategories">
+      <wsdl:input message="tns:SanPham_GetByCategoriesSoapIn" />
+      <wsdl:output message="tns:SanPham_GetByCategoriesSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="Delete_SanPham">
       <wsdl:input message="tns:Delete_SanPhamSoapIn" />
       <wsdl:output message="tns:Delete_SanPhamSoapOut" />
@@ -284,6 +346,24 @@
     </wsdl:operation>
     <wsdl:operation name="SanPham_GetByID">
       <soap:operation soapAction="http://tempuri.org/SanPham_GetByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SanPham_Search">
+      <soap:operation soapAction="http://tempuri.org/SanPham_Search" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SanPham_GetByCategories">
+      <soap:operation soapAction="http://tempuri.org/SanPham_GetByCategories" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -377,6 +457,24 @@
     </wsdl:operation>
     <wsdl:operation name="SanPham_GetByID">
       <soap12:operation soapAction="http://tempuri.org/SanPham_GetByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SanPham_Search">
+      <soap12:operation soapAction="http://tempuri.org/SanPham_Search" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SanPham_GetByCategories">
+      <soap12:operation soapAction="http://tempuri.org/SanPham_GetByCategories" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

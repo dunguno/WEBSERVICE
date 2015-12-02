@@ -3,9 +3,9 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div id="our_product">
-        <h2>Sản phẩm mới</h2>
+        <h2>Sản phẩm</h2>
         <%--<form id="formSanPham" runat="server">--%>
-        <asp:DataList ID="DataListSP" runat="server" RepeatColumns="3" Width="100%" Height="100%">
+        <asp:DataList ID="DataListSP" runat="server" DataKeyField="ma_sp" RepeatColumns="3" Width="100%" Height="100%" OnItemCommand="DataListSP_ItemCommand">
                     <ItemTemplate>
                         <br />
                         <asp:Image ID="ImageSP" runat="server" ImageUrl='<%# Eval("hinh", "~/Images/SanPham/{0}") %>' Height="150px" Width="150px" />

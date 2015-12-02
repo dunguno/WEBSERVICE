@@ -34,6 +34,10 @@ namespace WindowsForms.SanPham_ServiceReferences {
         
         private System.Threading.SendOrPostCallback SanPham_GetByIDOperationCompleted;
         
+        private System.Threading.SendOrPostCallback SanPham_SearchOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback SanPham_GetByCategoriesOperationCompleted;
+        
         private System.Threading.SendOrPostCallback Delete_SanPhamOperationCompleted;
         
         private System.Threading.SendOrPostCallback Update_SanPhamOperationCompleted;
@@ -93,6 +97,12 @@ namespace WindowsForms.SanPham_ServiceReferences {
         
         /// <remarks/>
         public event SanPham_GetByIDCompletedEventHandler SanPham_GetByIDCompleted;
+        
+        /// <remarks/>
+        public event SanPham_SearchCompletedEventHandler SanPham_SearchCompleted;
+        
+        /// <remarks/>
+        public event SanPham_GetByCategoriesCompletedEventHandler SanPham_GetByCategoriesCompleted;
         
         /// <remarks/>
         public event Delete_SanPhamCompletedEventHandler Delete_SanPhamCompleted;
@@ -171,6 +181,64 @@ namespace WindowsForms.SanPham_ServiceReferences {
             if ((this.SanPham_GetByIDCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.SanPham_GetByIDCompleted(this, new SanPham_GetByIDCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/SanPham_Search", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataTable SanPham_Search(string search) {
+            object[] results = this.Invoke("SanPham_Search", new object[] {
+                        search});
+            return ((System.Data.DataTable)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void SanPham_SearchAsync(string search) {
+            this.SanPham_SearchAsync(search, null);
+        }
+        
+        /// <remarks/>
+        public void SanPham_SearchAsync(string search, object userState) {
+            if ((this.SanPham_SearchOperationCompleted == null)) {
+                this.SanPham_SearchOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSanPham_SearchOperationCompleted);
+            }
+            this.InvokeAsync("SanPham_Search", new object[] {
+                        search}, this.SanPham_SearchOperationCompleted, userState);
+        }
+        
+        private void OnSanPham_SearchOperationCompleted(object arg) {
+            if ((this.SanPham_SearchCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.SanPham_SearchCompleted(this, new SanPham_SearchCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/SanPham_GetByCategories", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataTable SanPham_GetByCategories(int ma_loai) {
+            object[] results = this.Invoke("SanPham_GetByCategories", new object[] {
+                        ma_loai});
+            return ((System.Data.DataTable)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void SanPham_GetByCategoriesAsync(int ma_loai) {
+            this.SanPham_GetByCategoriesAsync(ma_loai, null);
+        }
+        
+        /// <remarks/>
+        public void SanPham_GetByCategoriesAsync(int ma_loai, object userState) {
+            if ((this.SanPham_GetByCategoriesOperationCompleted == null)) {
+                this.SanPham_GetByCategoriesOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSanPham_GetByCategoriesOperationCompleted);
+            }
+            this.InvokeAsync("SanPham_GetByCategories", new object[] {
+                        ma_loai}, this.SanPham_GetByCategoriesOperationCompleted, userState);
+        }
+        
+        private void OnSanPham_GetByCategoriesOperationCompleted(object arg) {
+            if ((this.SanPham_GetByCategoriesCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.SanPham_GetByCategoriesCompleted(this, new SanPham_GetByCategoriesCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -478,6 +546,58 @@ namespace WindowsForms.SanPham_ServiceReferences {
         private object[] results;
         
         internal SanPham_GetByIDCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void SanPham_SearchCompletedEventHandler(object sender, SanPham_SearchCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SanPham_SearchCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal SanPham_SearchCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void SanPham_GetByCategoriesCompletedEventHandler(object sender, SanPham_GetByCategoriesCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SanPham_GetByCategoriesCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal SanPham_GetByCategoriesCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

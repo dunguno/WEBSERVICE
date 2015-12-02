@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="ChiTietDonHang_GetByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ma_donhang" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChiTietDonHang_GetByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChiTietDonHang_GetByIDResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete_ChiTietDonHang">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ma_dh" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete_ChiTietDonHangResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Delete_ChiTietDonHangResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insert_ChiTietDonHang">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ma_dh" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ma_sp" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="soluong" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="gia" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insert_ChiTietDonHangResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Insert_ChiTietDonHangResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_ChiTietDonHang">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ma_donhang" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ma_sp" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="soluong" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="gia" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_ChiTietDonHangResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Update_ChiTietDonHangResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ChiTietDonHang_GetByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:ChiTietDonHang_GetByID" />
+  </wsdl:message>
+  <wsdl:message name="ChiTietDonHang_GetByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:ChiTietDonHang_GetByIDResponse" />
+  </wsdl:message>
+  <wsdl:message name="Delete_ChiTietDonHangSoapIn">
+    <wsdl:part name="parameters" element="tns:Delete_ChiTietDonHang" />
+  </wsdl:message>
+  <wsdl:message name="Delete_ChiTietDonHangSoapOut">
+    <wsdl:part name="parameters" element="tns:Delete_ChiTietDonHangResponse" />
+  </wsdl:message>
+  <wsdl:message name="Insert_ChiTietDonHangSoapIn">
+    <wsdl:part name="parameters" element="tns:Insert_ChiTietDonHang" />
+  </wsdl:message>
+  <wsdl:message name="Insert_ChiTietDonHangSoapOut">
+    <wsdl:part name="parameters" element="tns:Insert_ChiTietDonHangResponse" />
+  </wsdl:message>
+  <wsdl:message name="Update_ChiTietDonHangSoapIn">
+    <wsdl:part name="parameters" element="tns:Update_ChiTietDonHang" />
+  </wsdl:message>
+  <wsdl:message name="Update_ChiTietDonHangSoapOut">
+    <wsdl:part name="parameters" element="tns:Update_ChiTietDonHangResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ChiTietDonHang_ServiceSoap">
+    <wsdl:operation name="ChiTietDonHang_GetByID">
+      <wsdl:input message="tns:ChiTietDonHang_GetByIDSoapIn" />
+      <wsdl:output message="tns:ChiTietDonHang_GetByIDSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_ChiTietDonHang">
+      <wsdl:input message="tns:Delete_ChiTietDonHangSoapIn" />
+      <wsdl:output message="tns:Delete_ChiTietDonHangSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Insert_ChiTietDonHang">
+      <wsdl:input message="tns:Insert_ChiTietDonHangSoapIn" />
+      <wsdl:output message="tns:Insert_ChiTietDonHangSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_ChiTietDonHang">
+      <wsdl:input message="tns:Update_ChiTietDonHangSoapIn" />
+      <wsdl:output message="tns:Update_ChiTietDonHangSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ChiTietDonHang_ServiceSoap" type="tns:ChiTietDonHang_ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ChiTietDonHang_GetByID">
+      <soap:operation soapAction="http://tempuri.org/ChiTietDonHang_GetByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_ChiTietDonHang">
+      <soap:operation soapAction="http://tempuri.org/Delete_ChiTietDonHang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_ChiTietDonHang">
+      <soap:operation soapAction="http://tempuri.org/Insert_ChiTietDonHang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_ChiTietDonHang">
+      <soap:operation soapAction="http://tempuri.org/Update_ChiTietDonHang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ChiTietDonHang_ServiceSoap12" type="tns:ChiTietDonHang_ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ChiTietDonHang_GetByID">
+      <soap12:operation soapAction="http://tempuri.org/ChiTietDonHang_GetByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_ChiTietDonHang">
+      <soap12:operation soapAction="http://tempuri.org/Delete_ChiTietDonHang" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_ChiTietDonHang">
+      <soap12:operation soapAction="http://tempuri.org/Insert_ChiTietDonHang" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_ChiTietDonHang">
+      <soap12:operation soapAction="http://tempuri.org/Update_ChiTietDonHang" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ChiTietDonHang_Service">
+    <wsdl:port name="ChiTietDonHang_ServiceSoap" binding="tns:ChiTietDonHang_ServiceSoap">
+      <soap:address location="http://localhost:2122/ChiTietDonHang_Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ChiTietDonHang_ServiceSoap12" binding="tns:ChiTietDonHang_ServiceSoap12">
+      <soap12:address location="http://localhost:2122/ChiTietDonHang_Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

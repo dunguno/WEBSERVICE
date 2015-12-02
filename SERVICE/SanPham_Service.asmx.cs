@@ -54,6 +54,39 @@ namespace SERVICE
         }
 
         [WebMethod]
+        public DataTable SanPham_Search(string search)
+        {
+            DataTable mytb = new DataTable("Get_ByID");
+            string query = "SELECT * FROM Banh WHERE (ten_sp LIKE '%" + search + "%')";
+            SqlConnection conn = new SqlConnection(connect.ChuoiKetNoi());
+            SqlDataAdapter da = new SqlDataAdapter(query, conn);
+            da.Fill(mytb);
+            return mytb;
+        }
+
+        [WebMethod]
+        public DataTable SanPham_SearchAdvanced(string ten_sp, int loai, int giaMin, int giaMax)
+        {
+            DataTable mytb = new DataTable("Get_ByID");
+            string query = "Select * from Banh where ten_sp LIKE '%"+ten_sp+"%' or phan_loai = '"+ loai + "' or (gia between '"+ giaMin +"' and '"+ giaMax +"')";
+            SqlConnection conn = new SqlConnection(connect.ChuoiKetNoi());
+            SqlDataAdapter da = new SqlDataAdapter(query, conn);
+            da.Fill(mytb);
+            return mytb;
+        }
+
+        [WebMethod]
+        public DataTable SanPham_GetByPrice_Between(int gia1, int gia2)
+        {
+            DataTable mytb = new DataTable("Get_ByID");
+            string query = "select * from Banh where gia between '" + gia1 + "' and '" + gia2 + "'";
+            SqlConnection conn = new SqlConnection(connect.ChuoiKetNoi());
+            SqlDataAdapter da = new SqlDataAdapter(query, conn);
+            da.Fill(mytb);
+            return mytb;
+        }
+
+        [WebMethod]
         public bool Delete_SanPham(int ma_sp)
         {
             try

@@ -16,3 +16,21 @@ C:\Users\Huy Do\Desktop\WebService\Website\bin\Website.pdb
 C:\Users\Huy Do\Desktop\WebService\Website\obj\Debug\Website.csprojResolveAssemblyReference.cache
 C:\Users\Huy Do\Desktop\WebService\Website\obj\Debug\Website.dll
 C:\Users\Huy Do\Desktop\WebService\Website\obj\Debug\Website.pdb
+C:\Users\Huy Do\Desktop\WebService_Ver15\Website\bin\Website.dll.config
+C:\Users\Huy Do\Desktop\WebService_Ver15\Website\bin\Website.dll
+C:\Users\Huy Do\Desktop\WebService_Ver15\Website\bin\Website.pdb
+C:\Users\Huy Do\Desktop\WebService_Ver15\Website\obj\Debug\Website.dll
+C:\Users\Huy Do\Desktop\WebService_Ver15\Website\obj\Debug\Website.pdb
+C:\Users\Huy Do\Desktop\WebService_Ver15\Website\obj\Debug\Website.csprojResolveAssemblyReference.cache
+C:\Users\Huy Do\Desktop\WebService_Ver16\Website\bin\Website.dll.config
+C:\Users\Huy Do\Desktop\WebService_Ver16\Website\bin\Website.dll
+C:\Users\Huy Do\Desktop\WebService_Ver16\Website\bin\Website.pdb
+C:\Users\Huy Do\Desktop\WebService_Ver16\Website\obj\Debug\Website.dll
+C:\Users\Huy Do\Desktop\WebService_Ver16\Website\obj\Debug\Website.pdb
+C:\Users\Huy Do\Desktop\WebService_Ver16\Website\obj\Debug\Website.csprojResolveAssemblyReference.cache
+D:\SGU DATA\NAM V\WEB SERVICE\WebService_Ver16\WebService_Ver16\Website\bin\Website.dll.config
+D:\SGU DATA\NAM V\WEB SERVICE\WebService_Ver16\WebService_Ver16\Website\bin\Website.dll
+D:\SGU DATA\NAM V\WEB SERVICE\WebService_Ver16\WebService_Ver16\Website\bin\Website.pdb
+D:\SGU DATA\NAM V\WEB SERVICE\WebService_Ver16\WebService_Ver16\Website\obj\Debug\Website.csprojResolveAssemblyReference.cache
+D:\SGU DATA\NAM V\WEB SERVICE\WebService_Ver16\WebService_Ver16\Website\obj\Debug\Website.dll
+D:\SGU DATA\NAM V\WEB SERVICE\WebService_Ver16\WebService_Ver16\Website\obj\Debug\Website.pdb

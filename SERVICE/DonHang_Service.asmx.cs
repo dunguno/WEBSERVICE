@@ -53,6 +53,16 @@ namespace SERVICE
             da.Fill(mytb);
             return mytb;
         }
+        [WebMethod]
+        public DataTable DonHang_GetByCustomer(int ma_kh)
+        {
+            DataTable mytb = new DataTable("Get_ByID");
+            string query = "select * from DonHang where ma_kh=N'" + ma_kh + "'";
+            SqlConnection conn = new SqlConnection(connect.ChuoiKetNoi());
+            SqlDataAdapter da = new SqlDataAdapter(query, conn);
+            da.Fill(mytb);
+            return mytb;
+        }
 
         [WebMethod]
         public bool Delete_DonHang(int ma_dh)
@@ -81,6 +91,27 @@ namespace SERVICE
             try
             {
                 string sql = "UPDATE DonHang SET tinh_trang=N'" + tinh_trang + "',ma_nv=N'" + ma_nv + "' WHERE ma_donhang =N'" + ma_donhang + "'";
+                SqlConnection conn = new SqlConnection(connect.ChuoiKetNoi());
+                SqlCommand cm = new SqlCommand();
+                cm.Connection = conn;
+                cm.CommandText = sql;
+                cm.CommandType = CommandType.Text;
+                conn.Open();
+                cm.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        [WebMethod]
+        public bool Insert_DonHang(DateTime ngay_dh, string tinh_trang, int ma_kh, int ma_nv)
+        {
+            try
+            {
+                string sql = "INSERT INTO DonHang VALUES(N'" + ngay_dh + "',N'" + tinh_trang + "',N'" + ma_kh + "',N'" + ma_nv + "')";
                 SqlConnection conn = new SqlConnection(connect.ChuoiKetNoi());
                 SqlCommand cm = new SqlCommand();
                 cm.Connection = conn;

@@ -32,7 +32,7 @@ namespace WindowsForms.ChiTietDonHang_ServiceReferences {
         
         private System.Threading.SendOrPostCallback ChiTietDonHang_GetByIDOperationCompleted;
         
-        private System.Threading.SendOrPostCallback SanPham_GetNameByIDOperationCompleted;
+        private System.Threading.SendOrPostCallback Delete_ChiTietDonHangOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
@@ -76,7 +76,7 @@ namespace WindowsForms.ChiTietDonHang_ServiceReferences {
         public event ChiTietDonHang_GetByIDCompletedEventHandler ChiTietDonHang_GetByIDCompleted;
         
         /// <remarks/>
-        public event SanPham_GetNameByIDCompletedEventHandler SanPham_GetNameByIDCompleted;
+        public event Delete_ChiTietDonHangCompletedEventHandler Delete_ChiTietDonHangCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ChiTietDonHang_GetByID", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -108,31 +108,31 @@ namespace WindowsForms.ChiTietDonHang_ServiceReferences {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/SanPham_GetNameByID", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public System.Data.DataTable SanPham_GetNameByID(int ma_sp) {
-            object[] results = this.Invoke("SanPham_GetNameByID", new object[] {
-                        ma_sp});
-            return ((System.Data.DataTable)(results[0]));
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Delete_ChiTietDonHang", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool Delete_ChiTietDonHang(int ma_dh) {
+            object[] results = this.Invoke("Delete_ChiTietDonHang", new object[] {
+                        ma_dh});
+            return ((bool)(results[0]));
         }
         
         /// <remarks/>
-        public void SanPham_GetNameByIDAsync(int ma_sp) {
-            this.SanPham_GetNameByIDAsync(ma_sp, null);
+        public void Delete_ChiTietDonHangAsync(int ma_dh) {
+            this.Delete_ChiTietDonHangAsync(ma_dh, null);
         }
         
         /// <remarks/>
-        public void SanPham_GetNameByIDAsync(int ma_sp, object userState) {
-            if ((this.SanPham_GetNameByIDOperationCompleted == null)) {
-                this.SanPham_GetNameByIDOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSanPham_GetNameByIDOperationCompleted);
+        public void Delete_ChiTietDonHangAsync(int ma_dh, object userState) {
+            if ((this.Delete_ChiTietDonHangOperationCompleted == null)) {
+                this.Delete_ChiTietDonHangOperationCompleted = new System.Threading.SendOrPostCallback(this.OnDelete_ChiTietDonHangOperationCompleted);
             }
-            this.InvokeAsync("SanPham_GetNameByID", new object[] {
-                        ma_sp}, this.SanPham_GetNameByIDOperationCompleted, userState);
+            this.InvokeAsync("Delete_ChiTietDonHang", new object[] {
+                        ma_dh}, this.Delete_ChiTietDonHangOperationCompleted, userState);
         }
         
-        private void OnSanPham_GetNameByIDOperationCompleted(object arg) {
-            if ((this.SanPham_GetNameByIDCompleted != null)) {
+        private void OnDelete_ChiTietDonHangOperationCompleted(object arg) {
+            if ((this.Delete_ChiTietDonHangCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
-                this.SanPham_GetNameByIDCompleted(this, new SanPham_GetNameByIDCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+                this.Delete_ChiTietDonHangCompleted(this, new Delete_ChiTietDonHangCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -183,26 +183,26 @@ namespace WindowsForms.ChiTietDonHang_ServiceReferences {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
-    public delegate void SanPham_GetNameByIDCompletedEventHandler(object sender, SanPham_GetNameByIDCompletedEventArgs e);
+    public delegate void Delete_ChiTietDonHangCompletedEventHandler(object sender, Delete_ChiTietDonHangCompletedEventArgs e);
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    public partial class SanPham_GetNameByIDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+    public partial class Delete_ChiTietDonHangCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
         
         private object[] results;
         
-        internal SanPham_GetNameByIDCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+        internal Delete_ChiTietDonHangCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
         
         /// <remarks/>
-        public System.Data.DataTable Result {
+        public bool Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((System.Data.DataTable)(this.results[0]));
+                return ((bool)(this.results[0]));
             }
         }
     }

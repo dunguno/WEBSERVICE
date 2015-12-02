@@ -8,6 +8,14 @@
     <link href="../Style/style.css" rel="stylesheet" />
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            width: 195px;
+        }
+        .auto-style2 {
+            width: 200px;
+        }
+    </style>
 </head>
 <body>
     <form runat="server">
@@ -17,18 +25,23 @@
 	 			
 	 		</div>
 	 		<div id="search_area">
-	 			<input id="text_Area" type="text" placeholder="Tìm kiếm ...">
-	 			<input id="button" type="button" value="Tìm">
+                 <asp:TextBox ID ="txtSearch" runat ="server" Width="190px" Height="22px"></asp:TextBox>
+				 <asp:Button ID ="btnSearch" Text="Tìm" runat ="server" OnClick="btnSearch_Click" style="width: 70px; height:27px; margin-left:10px" />
+	 			<%--<input id="text_Area" type="text" placeholder="Tìm kiếm ..."/>
+	 			<input id="button" type="button" value="Tìm"/>--%>
 	 		</div>
 	 		
 	 	</div>
 	 	<div id="nav_area">
 	 			<ul>
 	 				<li><a href="../Home.aspx">Trang chủ</a></li>
-	 				<li><a href="../Product.aspx">Sản phẩm</a></li>
+	 				<%--<li><a href="../Product.aspx">Sản phẩm</a></li>--%>
 	 				<li><a href="../Register.aspx">Đăng ký</a></li>
+                    <li><a href="../Cart.aspx">Giỏ hàng</a></li>
 	 				<li><a href="../About.aspx">Giới thiệu</a></li>
 	 				<li><a href="../Contact.aspx">Liên hệ</a></li>
+                    <%--<li><input id="text_Area" type="text" placeholder="Tìm kiếm ..."></li>
+                    <li><input id="button" type="button" value="Tìm"></li>--%>
 	 			</ul>
 	 	</div><!--end nav area-->
 
@@ -45,31 +58,67 @@
 	 		</div><!--end catagories-->
 
 	 		<div id="payment_area">
-	 			<h2>Giá</h2>
+	 			<h2>Tìm kiếm nâng cao</h2>
                 <ul>
-	 				<li><a href="">> 500.000 </a></li>
-	 				<li><a href="#">300.000 - 500.000</a></li>
-	 				<li><a href="#">100.000 - 300.000</a></li>
-	 				<li><a href="#">< 100.000</a></li>
+                    <table>
+                        <tr>
+                            <td>
+                                <li>Tên bánh:</li>
+                            </td>
+                            <td class="auto-style1">
+                                <asp:TextBox ID ="txtTenSP" runat ="server" Width="170px" Height="23px" ></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <li>Loại:</li>
+                            </td>
+                            <td class="auto-style1">
+                                <asp:DropDownList runat="server" ID="DropDownListDanhMuc" Height="25px"  Width="170px"></asp:DropDownList>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <li>Giá từ:</li>
+                            </td>
+                            <td class="auto-style1">
+                                <asp:TextBox ID ="txtGia_Min" runat ="server" Width="170px" Height="23px"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <li>Đến:</li>
+                            </td>
+                            <td class="auto-style1">
+                                <asp:TextBox ID ="txtGia_Max" runat ="server" Width="170px" Height="23px"></asp:TextBox>
+                            </td>
+                        </tr>
+                    <tr>
+                        <td></td>
+                        <td class="auto-style1">
+                            <asp:Button ID ="btSearchAdvance" Text ="Tìm" runat ="server" Width="100px" Height="27px" OnClick="btSearchAdvance_Click" />
+                        </td>
+                    </tr>
+                        
+                    </table>
 	 			</ul>
 	 		</div><!--end payments area-->
-	 			
 	 		<div id="Shipping">
-	 			 <h2>Đăng nhập</h2>
-                 <%--<form id="formDangNhap" runat="server">--%>
+             <asp:Panel ID ="paneDangNhap" runat ="server">
+                 
+                     <h2>Đăng nhập</h2>
+                     <%--<form id="formDangNhap" runat="server">--%>
                      <table>
                          <tr>
-                             <td style="text-align:left; padding-left:10px; width:100%"><strong>Tên đăng nhập: </strong></td>
-                             <td style="padding-left:1px; padding-right:10px">
+                             <td style="text-align: left; padding-left: 10px; width: 80%"><strong>Tên đăng nhập: </strong></td>
+                             <td style="padding-left: 1px; padding-right: 10px">
                                  <asp:TextBox ID="txtUser" runat="server" Width="150px" Height="22px" />
-
                              </td>
                          </tr>
 
                          <tr>
-
-                             <td style="text-align:left; padding-left:10px; width:100%"><strong>Mật khẩu: </strong></td>
-                             <td style="padding-left:1px; padding-right:10px">
+                             <td style="text-align: left; padding-left: 10px; width: 100%"><strong>Mật khẩu: </strong></td>
+                             <td style="padding-left: 1px; padding-right: 10px">
                                  <asp:TextBox ID="txtPass" runat="server" Width="150px" Height="22px" TextMode="Password" />
 
                              </td>
@@ -77,19 +126,49 @@
                          </tr>
                          <tr>
                              <td></td>
-                             <td style="padding-top:7px; padding-left:78px">
-                                 <asp:Button runat="server" ID="btLogin" Text="Đăng nhập" />
+                             <td style="padding-top: 7px; padding-left: 78px">
+                                 <asp:Button runat="server" ID="btLogin" Text="Đăng nhập" OnClick="btLogin_Click" />
+                                 <%--<asp:Button runat="server" ID="btReset" Text="Làm lại" />--%>
                              </td>
                          </tr>
                          <tr>
                              <td></td>
-                             <td style="padding-top:3px; padding-left:100px">
-                                 <asp:LinkButton runat="server" ID="btReg" Text="Đăng ký" />
+                             <td style="padding-top: 3px; padding-left: 100px">
+                                 <%--<asp:LinkButton runat="server" ID="btReg" Text="Đăng ký" />--%>
+                                 <a href="Register.aspx">Đăng ký</a>
                              </td>
                          </tr>
                      </table>
-                 <%--</form>--%>	
-	 		</div><!--end shipping area-->
+                     <%--</form>--%>
+                 
+                 <!--end shipping area-->
+                 </asp:Panel>
+                </div>
+             <div id="Shipping">
+             <asp:Panel ID="paneInfoKH" runat ="server" Visible ="false">
+                     <h2>Thông tin khách hàng</h2>
+                        <table style="width: 300px">
+                         <asp:Repeater ID ="rptDangNhapKH" runat ="server">
+                             <ItemTemplate>
+                                 <tr>
+                                     <td style="text-align:left; padding-left:10px; width:95px">Khách hàng : </td>
+                                     <td style="text-align:left; padding-left:5px"><asp:Label ID="TenDNLabel" runat="server" Text='<%# Bind("hoten") %>' /></td>
+                                 </tr>
+                                 <tr>
+                                     <td colspan="2" style="text-align:left; padding-left:10px"><a href ="Customer.aspx?ma_kh=<%# Eval("ma_kh") %>">Thông tin tài khoản</a></td>
+                                 </tr>
+                                 <tr>
+                                     <td colspan="2" style="text-align:left; padding-left:10px"><a href ="ListOrder.aspx?ma_kh=<%# Eval("ma_kh") %>">Lịch sử đặt hàng</a></td>
+                                 </tr>
+                                 <tr>
+                                     <td colspan="2" style="text-align:center"><asp:LinkButton ID="LinkBtnThoat" Text="Đăng xuất" runat="server" OnClick="LinkBtnThoat_Click"></asp:LinkButton></td>
+                                 </tr>
+                             </ItemTemplate>
+                         </asp:Repeater>
+                        </table> 
+                        
+             </asp:Panel>	
+             </div> 
 	 		<div id="contact">
 	 		<h2>Hỗ trợ</h2>
                  <ul style="padding-bottom:5px">
@@ -130,21 +209,25 @@
 				 	</div><!--end of right area-->
  	
  	<div id="footer_area">
-	
-	<ul>
-		<li><a href="#">Trang chủ			 		
+	 		
 				 	</div><!--end of right area-->
  	
  	<div id="footer_area">
 	
 	<ul>
-		<li><a href="#">Trang chủ</a></li>
-		<li><a href="#">Sản phẩm</a></li>
-		<li><a href="#">Đăng ký</a></li>
-		<li><a href="#">Giới thiệu</a></li>
-		<li><a href="#">Liên hệ</a></li>
+		<li><a href="../Home.aspx">Trang chủ</a></li>
+		<%--<li><a href="#">Sản phẩm</a></li>--%>
+		<li><a href="../Register.aspx">Đăng ký</a></li>
+        <li><a href="../Cart.aspx">Giỏ hàng</a></li>
+		<li><a href="../About.aspx">Giới thiệu</a></li>
+		<li><a href="../Contact.aspx">Liên hệ</a></li>
 	</ul>
- 	<p> Copyright © 2015</p>
+ 	<div id="cpr">
+         Copyright © 2015
+ 	</div>
+    
+ 	
+         
 	</div>
 </div>
 </form>

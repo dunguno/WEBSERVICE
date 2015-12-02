@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btSearch = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSearch = new System.Windows.Forms.TextBox();
             this.dgvSanPham = new System.Windows.Forms.DataGridView();
             this.ma_sp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ten_sp = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -40,6 +40,7 @@
             this.btDel = new System.Windows.Forms.Button();
             this.btEdit = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,19 +48,20 @@
             // 
             this.btSearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btSearch.Image = global::WindowsForms.Properties.Resources.search;
-            this.btSearch.Location = new System.Drawing.Point(289, 93);
+            this.btSearch.Location = new System.Drawing.Point(356, 92);
             this.btSearch.Name = "btSearch";
             this.btSearch.Size = new System.Drawing.Size(46, 30);
             this.btSearch.TabIndex = 0;
             this.btSearch.UseVisualStyleBackColor = true;
+            this.btSearch.Click += new System.EventHandler(this.btSearch_Click);
             // 
-            // textBox1
+            // txtSearch
             // 
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox1.Location = new System.Drawing.Point(29, 93);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(254, 26);
-            this.textBox1.TabIndex = 1;
+            this.txtSearch.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtSearch.Location = new System.Drawing.Point(96, 93);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(254, 26);
+            this.txtSearch.TabIndex = 1;
             // 
             // dgvSanPham
             // 
@@ -159,17 +161,28 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "QUẢN LÝ SẢN PHẨM";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label1.Location = new System.Drawing.Point(25, 96);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 19);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Tìm kiếm";
+            // 
             // SanPham_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(725, 405);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btEdit);
             this.Controls.Add(this.btDel);
             this.Controls.Add(this.btAdd);
             this.Controls.Add(this.dgvSanPham);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btSearch);
             this.Name = "SanPham_Form";
             this.Text = "Quản lý sản phẩm";
@@ -183,7 +196,7 @@
         #endregion
 
         private System.Windows.Forms.Button btSearch;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.DataGridView dgvSanPham;
         private System.Windows.Forms.Button btAdd;
         private System.Windows.Forms.Button btDel;
@@ -194,5 +207,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn mo_ta;
         private System.Windows.Forms.DataGridViewTextBoxColumn gia;
         private System.Windows.Forms.DataGridViewTextBoxColumn phan_loai;
+        private System.Windows.Forms.Label label1;
     }
 }

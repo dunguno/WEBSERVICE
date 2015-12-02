@@ -12,6 +12,7 @@ namespace WindowsForms
     public partial class DonHang_Form : Form
     {
         DonHang_ServiceReferences.DonHang_Service donhang = new DonHang_ServiceReferences.DonHang_Service();
+        ChiTietDonHang_ServiceReferences.ChiTietDonHang_Service ctdh = new ChiTietDonHang_ServiceReferences.ChiTietDonHang_Service();
         NhanVien_ServiceReferences.NhanVien_Service nhanvien = new NhanVien_ServiceReferences.NhanVien_Service();
         public static int ma_donhang;
 
@@ -105,6 +106,31 @@ namespace WindowsForms
             cbNhanvien.DataSource = nhanvien.NhanVien_Load();
             cbNhanvien.ValueMember = "ma_nv";
             cbNhanvien.DisplayMember = "ten_nv";
+        }
+
+        private void btDel_Click(object sender, EventArgs e)
+        {
+            ma_donhang = int.Parse(dgvDonhang.Rows[dgvDonhang.CurrentCell.RowIndex].Cells["ma_donhang"].Value.ToString());
+            if (ma_donhang != 0)
+            {
+                if (MessageBox.Show("Bạn có chắc chắn muốn xóa không?", "Thông báo", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    if ((ctdh.Delete_ChiTietDonHang(ma_donhang)) && (donhang.Delete_DonHang(ma_donhang)))
+                    {
+                        MessageBox.Show("Xóa thành công!");
+                        LoadData();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Có lỗi xảy ra!");
+                    }
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Hãy chọn đơn hàng cần xóa");
+            }
         }
     }
 }

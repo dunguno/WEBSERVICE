@@ -117,6 +117,7 @@
             this.btDel.TabIndex = 28;
             this.btDel.Text = "Xóa";
             this.btDel.UseVisualStyleBackColor = false;
+            this.btDel.Click += new System.EventHandler(this.btDel_Click);
             // 
             // btEdit
             // 

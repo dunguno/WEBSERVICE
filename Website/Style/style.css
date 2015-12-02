@@ -196,7 +196,7 @@ a:visited {
 
         #payment_area ul li {
 	        line-height: 30px;
-	        width: auto;
+	        width: 87px;
         }
 
         #payment_area ul li a {
@@ -235,6 +235,21 @@ a:visited {
 	height: auto;
 	overflow: hidden;
 	clear: both;
+}
+.Shipping {
+	background: #E3E3E3;
+	width: 300px;
+	height: auto;
+	overflow: hidden;
+	clear: both;
+}
+.Shipping h2 {
+	padding: 5px;
+	text-align: center;
+	margin-bottom: 10px;
+	background-image:url("imges/navbg.jpg");
+	color: green;
+	font-family: helvetica;
 }
 
 #Shipping h2 {
