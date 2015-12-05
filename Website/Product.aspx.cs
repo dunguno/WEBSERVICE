@@ -165,7 +165,6 @@ namespace Website
                     int ma_sp = int.Parse(DataListSP.DataKeys[e.Item.ItemIndex].ToString());
                     string ten_sp = ((Label)e.Item.FindControl("TenSPLabel")).Text;
                     float gia = float.Parse(((Label)e.Item.FindControl("GiaLabel")).Text);
-                    string hinh = ((Image)e.Item.FindControl("ImageSP").Text);
                     int soluong = 1;
 
                     ////Add vao gio hang
@@ -178,7 +177,7 @@ namespace Website
                             goto GioHang;
                         }
                     }
-                    tb_giohang.Rows.Add(ma_sp, ten_sp, gia,hinh, soluong);
+                    tb_giohang.Rows.Add(ma_sp, ten_sp, gia, soluong);
                     GioHang:
                     Session["Giohang"] = tb_giohang;
 

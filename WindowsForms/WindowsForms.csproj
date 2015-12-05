@@ -34,13 +34,22 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.EnterpriseServices" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -51,6 +60,17 @@
     </Compile>
     <Compile Include="ChiTietDonHang_Form.Designer.cs">
       <DependentUpon>ChiTietDonHang_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InDonHang_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InDonHang_Form.Designer.cs">
+      <DependentUpon>InDonHang_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetDonHang.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetDonHang.xsd</DependentUpon>
     </Compile>
     <Compile Include="Ultilities.cs" />
     <Compile Include="DangNhap_Form.cs">
@@ -145,6 +165,9 @@
     <EmbeddedResource Include="DonHang_Form.resx">
       <DependentUpon>DonHang_Form.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="InDonHang_Form.resx">
+      <DependentUpon>InDonHang_Form.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="KhachHang_Form.resx">
       <DependentUpon>KhachHang_Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,6 +187,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Report\ReportDonHang.rdlc" />
     <EmbeddedResource Include="SanPhamChiTiet_Form.resx">
       <DependentUpon>SanPhamChiTiet_Form.cs</DependentUpon>
     </EmbeddedResource>
@@ -180,6 +204,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="DataSetDonHang.xsc">
+      <DependentUpon>DataSetDonHang.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetDonHang.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetDonHang.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetDonHang.xss">
+      <DependentUpon>DataSetDonHang.xsd</DependentUpon>
+    </None>
     <None Include="Web References\ChiTietDonHang_ServiceReferences\ChiTietDonHang_Service.wsdl" />
     <None Include="Web References\ChiTietDonHang_ServiceReferences\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
@@ -341,6 +376,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\no-image.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

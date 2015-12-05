@@ -91,6 +91,8 @@ namespace Website
                 }
                 else
                 {
+                    Session["Giohang"] = tb_giohang;
+                    
                     int ma_sp = int.Parse(DataListSP_ByCat.DataKeys[e.Item.ItemIndex].ToString());
                     string ten_sp = ((Label)e.Item.FindControl("TenSPLabel")).Text;
                     float gia = float.Parse(((Label)e.Item.FindControl("GiaLabel")).Text);
@@ -108,10 +110,9 @@ namespace Website
                     }
                     tb_giohang.Rows.Add(ma_sp, ten_sp, gia, soluong);
                     GioHang:
-                    Session["Giohang"] = tb_giohang;
-
+                   // tb_giohang.Rows.Add(ma_sp, ten_sp, gia, soluong);
                     Response.Write("<script>alert('Đã thêm vào giỏ hàng ^.*!...')</script>");
-                }
+               }
 
             }
             //int ma_sp = int.Parse(DataListSP_ByCat.DataKeys[e.Item.ItemIndex].ToString());

@@ -82,5 +82,15 @@ namespace WindowsForms.Properties {
                 return ((string)(this["WindowsForms_KhachHang_ServiceReferences_KhachHang_Service"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=HUY;Initial Catalog=BakeryShop;Integrated Security=True")]
+        public string BakeryShopConnectionString {
+            get {
+                return ((string)(this["BakeryShopConnectionString"]));
+            }
+        }
     }
 }

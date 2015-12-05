@@ -24,8 +24,23 @@ namespace WindowsForms
         private void DonHang_Form_Load(object sender, EventArgs e)
         {
             LoadData();
+            //Check_KhachHang();
         }
 
+        private void Check_KhachHang()
+        {
+            if (checkKH.Checked == true)
+            {
+                txtTimKH.Enabled = false;
+                btTimKH.Enabled = false;
+            }
+            else
+            {
+                txtTimKH.Enabled = true;
+                btTimKH.Enabled = true;
+            }
+
+        }
         private void LoadData()
         {
             dgvDonhang.DataSource = donhang.DonHang_GetAll();
@@ -132,5 +147,18 @@ namespace WindowsForms
                 MessageBox.Show("Hãy chọn đơn hàng cần xóa");
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ma_donhang = int.Parse(dgvDonhang.Rows[dgvDonhang.CurrentCell.RowIndex].Cells["ma_donhang"].Value.ToString());
+            InDonHang_Form frm = new InDonHang_Form();
+            frm.ShowDialog();
+        }
+
+        private void checkKH_CheckStateChanged(object sender, EventArgs e)
+        {
+            Check_KhachHang();
+        }
+
     }
 }

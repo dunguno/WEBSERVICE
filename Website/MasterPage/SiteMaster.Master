@@ -215,19 +215,13 @@
  	<div id="footer_area">
 	
 	<ul>
-		<li><a href="../Home.aspx">Trang chủ</a></li>
+		<li><a href="#">Trang chủ</a></li>
 		<%--<li><a href="#">Sản phẩm</a></li>--%>
-		<li><a href="../Register.aspx">Đăng ký</a></li>
-        <li><a href="../Cart.aspx">Giỏ hàng</a></li>
-		<li><a href="../About.aspx">Giới thiệu</a></li>
-		<li><a href="../Contact.aspx">Liên hệ</a></li>
+		<li><a href="#">Đăng ký</a></li>
+		<li><a href="#">Giới thiệu</a></li>
+		<li><a href="#">Liên hệ</a></li>
 	</ul>
- 	<div id="cpr">
-         Copyright © 2015
- 	</div>
-    
- 	
-         
+ 	<p> Copyright © 2015</p>
 	</div>
 </div>
 </form>

@@ -52,7 +52,6 @@ C:\Users\Huy Do\Desktop\WebService_Ver15\WindowsForms\obj\Debug\WindowsForms.csp
 C:\Users\Huy Do\Desktop\WebService_Ver16\WindowsForms\bin\Debug\WindowsForms.exe.config
 C:\Users\Huy Do\Desktop\WebService_Ver16\WindowsForms\bin\Debug\WindowsForms.exe
 C:\Users\Huy Do\Desktop\WebService_Ver16\WindowsForms\bin\Debug\WindowsForms.pdb
-C:\Users\Huy Do\Desktop\WebService_Ver16\WindowsForms\obj\Debug\WindowsForms.csprojResolveAssemblyReference.cache
 C:\Users\Huy Do\Desktop\WebService_Ver16\WindowsForms\obj\Debug\WindowsForms.ChiTietDonHang_Form.resources
 C:\Users\Huy Do\Desktop\WebService_Ver16\WindowsForms\obj\Debug\WindowsForms.DangNhap_Form.resources
 C:\Users\Huy Do\Desktop\WebService_Ver16\WindowsForms\obj\Debug\WindowsForms.DanhMuc_Form.resources
@@ -66,3 +65,6 @@ C:\Users\Huy Do\Desktop\WebService_Ver16\WindowsForms\obj\Debug\WindowsForms.San
 C:\Users\Huy Do\Desktop\WebService_Ver16\WindowsForms\obj\Debug\WindowsForms.csproj.GenerateResource.Cache
 C:\Users\Huy Do\Desktop\WebService_Ver16\WindowsForms\obj\Debug\WindowsForms.exe
 C:\Users\Huy Do\Desktop\WebService_Ver16\WindowsForms\obj\Debug\WindowsForms.pdb
+C:\Users\Huy Do\Desktop\WebService_Ver16\WindowsForms\obj\Debug\RdlCompile.cache
+C:\Users\Huy Do\Desktop\WebService_Ver16\WindowsForms\obj\Debug\RdlCompile.compiled
+C:\Users\Huy Do\Desktop\WebService_Ver16\WindowsForms\obj\Debug\WindowsForms.InDonHang_Form.resources
