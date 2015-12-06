@@ -107,6 +107,17 @@ namespace SERVICE
         }
 
         [WebMethod]
+        public DataTable KhachHang_GetLastID()
+        {
+            DataTable mytb = new DataTable("Get_ByName");
+            string query = "Select top 1 ma_kh from KhachHang Order by ma_kh DESC ";
+            SqlConnection conn = new SqlConnection(connect.ChuoiKetNoi());
+            SqlDataAdapter da = new SqlDataAdapter(query, conn);
+            da.Fill(mytb);
+            return mytb;
+        }
+
+        [WebMethod]
         public bool Delete_KhachHang(int ma_kh)
         {
             try

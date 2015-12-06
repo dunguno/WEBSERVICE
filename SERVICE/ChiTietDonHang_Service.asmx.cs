@@ -95,11 +95,11 @@ namespace SERVICE
         }
 
         [WebMethod]
-        public bool Update_ChiTietDonHang(int ma_donhang, int ma_sp, int soluong, int gia)
+        public bool Update_ChiTietDonHang(int ma_donhang, int ma_sp, int ma_SP,int soluong, int gia)
         {
             try
             {
-                string sql = "UPDATE ChiTietDonHang SET ma_sp=N'" + ma_sp + "',soluong=N'" + soluong + "', gia=N'" + gia + "' WHERE ma_donhang =N'" + ma_donhang + "'";
+                string sql = "UPDATE ChiTietDonHang SET ma_sp=N'" + ma_SP + "',soluong=N'" + soluong + "', gia=N'" + gia + "' WHERE ma_donhang =N'" + ma_donhang + "' AND ma_sp =N'" + ma_sp + "'";
                 SqlConnection conn = new SqlConnection(connect.ChuoiKetNoi());
                 SqlCommand cm = new SqlCommand();
                 cm.Connection = conn;

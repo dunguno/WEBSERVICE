@@ -28,3 +28,9 @@ C:\Users\Huy Do\Desktop\WebService_Ver16\Website\bin\Website.pdb
 C:\Users\Huy Do\Desktop\WebService_Ver16\Website\obj\Debug\Website.dll
 C:\Users\Huy Do\Desktop\WebService_Ver16\Website\obj\Debug\Website.pdb
 C:\Users\Huy Do\Desktop\WebService_Ver16\Website\obj\Debug\Website.csprojResolveAssemblyReference.cache
+C:\Users\Huy Do\Documents\GitHub\WEBSERVICE\Website\bin\Website.dll.config
+C:\Users\Huy Do\Documents\GitHub\WEBSERVICE\Website\bin\Website.dll
+C:\Users\Huy Do\Documents\GitHub\WEBSERVICE\Website\bin\Website.pdb
+C:\Users\Huy Do\Documents\GitHub\WEBSERVICE\Website\obj\Debug\Website.csprojResolveAssemblyReference.cache
+C:\Users\Huy Do\Documents\GitHub\WEBSERVICE\Website\obj\Debug\Website.dll
+C:\Users\Huy Do\Documents\GitHub\WEBSERVICE\Website\obj\Debug\Website.pdb

@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtMaDH = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -124,9 +124,9 @@
             // 
             this.gia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.gia.DataPropertyName = "gia";
-            dataGridViewCellStyle1.Format = "C0";
-            dataGridViewCellStyle1.NullValue = null;
-            this.gia.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Format = "C0";
+            dataGridViewCellStyle7.NullValue = null;
+            this.gia.DefaultCellStyle = dataGridViewCellStyle7;
             this.gia.HeaderText = "Giá";
             this.gia.Name = "gia";
             this.gia.Width = 120;
@@ -143,9 +143,9 @@
             // 
             this.thanh_tien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.thanh_tien.DataPropertyName = "thanh_tien";
-            dataGridViewCellStyle2.Format = "C0";
-            dataGridViewCellStyle2.NullValue = null;
-            this.thanh_tien.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Format = "C0";
+            dataGridViewCellStyle8.NullValue = null;
+            this.thanh_tien.DefaultCellStyle = dataGridViewCellStyle8;
             this.thanh_tien.HeaderText = "Thành tiền";
             this.thanh_tien.Name = "thanh_tien";
             this.thanh_tien.Width = 120;
@@ -154,7 +154,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.Location = new System.Drawing.Point(200, 28);
+            this.label3.Location = new System.Drawing.Point(213, 27);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(305, 32);
             this.label3.TabIndex = 15;
@@ -189,6 +189,7 @@
             this.btAdd.TabIndex = 34;
             this.btAdd.Text = "Thêm";
             this.btAdd.UseVisualStyleBackColor = false;
+            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
             // txtSoluong
             // 
@@ -225,6 +226,7 @@
             // btEdit
             // 
             this.btEdit.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btEdit.Enabled = false;
             this.btEdit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btEdit.Location = new System.Drawing.Point(353, 89);
             this.btEdit.Name = "btEdit";
@@ -232,6 +234,7 @@
             this.btEdit.TabIndex = 32;
             this.btEdit.Text = "Cập nhật";
             this.btEdit.UseVisualStyleBackColor = false;
+            this.btEdit.Click += new System.EventHandler(this.btEdit_Click);
             // 
             // label6
             // 

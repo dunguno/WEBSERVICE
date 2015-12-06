@@ -40,6 +40,8 @@ namespace WindowsForms.DonHang_ServiceReferences {
         
         private System.Threading.SendOrPostCallback DonHang_GetByCustomerOperationCompleted;
         
+        private System.Threading.SendOrPostCallback DonHang_GetLastIDOperationCompleted;
+        
         private System.Threading.SendOrPostCallback Delete_DonHangOperationCompleted;
         
         private System.Threading.SendOrPostCallback Update_DonHangOperationCompleted;
@@ -98,6 +100,9 @@ namespace WindowsForms.DonHang_ServiceReferences {
         
         /// <remarks/>
         public event DonHang_GetByCustomerCompletedEventHandler DonHang_GetByCustomerCompleted;
+        
+        /// <remarks/>
+        public event DonHang_GetLastIDCompletedEventHandler DonHang_GetLastIDCompleted;
         
         /// <remarks/>
         public event Delete_DonHangCompletedEventHandler Delete_DonHangCompleted;
@@ -250,6 +255,33 @@ namespace WindowsForms.DonHang_ServiceReferences {
             if ((this.DonHang_GetByCustomerCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.DonHang_GetByCustomerCompleted(this, new DonHang_GetByCustomerCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/DonHang_GetLastID", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataTable DonHang_GetLastID() {
+            object[] results = this.Invoke("DonHang_GetLastID", new object[0]);
+            return ((System.Data.DataTable)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void DonHang_GetLastIDAsync() {
+            this.DonHang_GetLastIDAsync(null);
+        }
+        
+        /// <remarks/>
+        public void DonHang_GetLastIDAsync(object userState) {
+            if ((this.DonHang_GetLastIDOperationCompleted == null)) {
+                this.DonHang_GetLastIDOperationCompleted = new System.Threading.SendOrPostCallback(this.OnDonHang_GetLastIDOperationCompleted);
+            }
+            this.InvokeAsync("DonHang_GetLastID", new object[0], this.DonHang_GetLastIDOperationCompleted, userState);
+        }
+        
+        private void OnDonHang_GetLastIDOperationCompleted(object arg) {
+            if ((this.DonHang_GetLastIDCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.DonHang_GetLastIDCompleted(this, new DonHang_GetLastIDCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -486,6 +518,32 @@ namespace WindowsForms.DonHang_ServiceReferences {
         private object[] results;
         
         internal DonHang_GetByCustomerCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void DonHang_GetLastIDCompletedEventHandler(object sender, DonHang_GetLastIDCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class DonHang_GetLastIDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal DonHang_GetLastIDCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

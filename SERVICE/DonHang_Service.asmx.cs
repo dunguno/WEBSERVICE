@@ -76,6 +76,17 @@ namespace SERVICE
         }
 
         [WebMethod]
+        public DataTable DonHang_GetLastID()
+        {
+            DataTable mytb = new DataTable("Get_ByName");
+            string query = "Select top 1 ma_donhang from DonHang Order by ma_donhang DESC ";
+            SqlConnection conn = new SqlConnection(connect.ChuoiKetNoi());
+            SqlDataAdapter da = new SqlDataAdapter(query, conn);
+            da.Fill(mytb);
+            return mytb;
+        }
+
+        [WebMethod]
         public bool Delete_DonHang(int ma_dh)
         {
             try

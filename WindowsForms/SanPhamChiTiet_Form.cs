@@ -47,7 +47,7 @@ namespace WindowsForms
             cbDanhmuc.Text = sanpham.GetDanhMuc(int.Parse(dr["phan_loai"].ToString()));
             string url = System.IO.Directory.GetCurrentDirectory().Replace("\\WindowsForms\\bin\\Debug", "\\Website\\Images\\SanPham\\" + dr["hinh"].ToString());
             pictureBoxSP.Image = Image.FromFile(url);
-
+            Load_cbDanhMuc();
         }
 
         private void btRefresh_Click(object sender, EventArgs e)

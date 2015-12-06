@@ -15,6 +15,7 @@ namespace WindowsForms
         ChiTietDonHang_ServiceReferences.ChiTietDonHang_Service ctdh = new ChiTietDonHang_ServiceReferences.ChiTietDonHang_Service();
         NhanVien_ServiceReferences.NhanVien_Service nhanvien = new NhanVien_ServiceReferences.NhanVien_Service();
         KhachHang_ServiceReferences.KhachHang_Service khachhang = new KhachHang_ServiceReferences.KhachHang_Service();
+
         public static int ma_donhang;
 
         public DonHang_Form()
@@ -40,7 +41,7 @@ namespace WindowsForms
             {
                 txtTimKH.Enabled = true;
                 btTimKH.Enabled = true;
-                panelKH.Enabled = false;
+                //panelKH.Enabled = false;
             }
 
         }
@@ -184,6 +185,40 @@ namespace WindowsForms
         {
             Check_KhachHang();
             Reset();
+        }
+
+        private void btAdd_Click(object sender, EventArgs e)
+        {
+            if(donhang.Insert_DonHang(DateTime.Parse(DateTime.Today.ToString("dd/MM/yyyy")), cbTinhtrang.Text, int.Parse(txtMaKH.Text),int.Parse("1")))
+            {
+                MessageBox.Show("Thành công");
+            }
+            //DataRow dr = khachhang.KhachHang_GetLastID().Rows[0];
+            //int ma_kh = int.Parse(dr["ma_kh"].ToString()) + 1;
+            //string username = "KH"+ma_kh.ToString();
+            //if(checkKH.Checked == true)
+            //{
+            //    if(khachhang.Insert_KhachHang(txtHoten.Text, txtSdt.Text, txtDiachi.Text, txtEmail.Text, username, "12345"))
+            //    {
+            //        donhang.Insert_DonHang(DateTime.Today,"Đang xử lý",ma_kh,int.Parse(cbNhanvien.SelectedValue.ToString()));
+            //        DataRow drDH = donhang.DonHang_GetLastID().Rows[0];
+            //        ma_donhang = int.Parse(drDH["ma_donhang"].ToString());
+            //        ChiTietDonHang_Form frm = new ChiTietDonHang_Form(ma_donhang);
+            //        frm.ShowDialog();
+            //    }
+            //}
+            //else
+            //{
+            //    if (donhang.Insert_DonHang(DateTime.Today, "Đang xử lý", int.Parse(txtMaKH.Text), int.Parse(cbNhanvien.SelectedValue.ToString())))
+            //    {
+            //        MessageBox.Show("fsdsfsdf");
+            //        //DataRow drDH = donhang.DonHang_GetLastID().Rows[0];
+            //        //ma_donhang = int.Parse(drDH["ma_donhang"].ToString());
+            //        //ChiTietDonHang_Form frm = new ChiTietDonHang_Form(ma_donhang);
+            //        //frm.ShowDialog();
+            //    }
+
+            //}
         }
 
     }

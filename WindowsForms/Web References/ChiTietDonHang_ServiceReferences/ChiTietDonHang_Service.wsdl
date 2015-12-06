@@ -74,6 +74,7 @@
           <s:sequence>
             <s:element minOccurs="1" maxOccurs="1" name="ma_donhang" type="s:int" />
             <s:element minOccurs="1" maxOccurs="1" name="ma_sp" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ma_SP" type="s:int" />
             <s:element minOccurs="1" maxOccurs="1" name="soluong" type="s:int" />
             <s:element minOccurs="1" maxOccurs="1" name="gia" type="s:int" />
           </s:sequence>

@@ -50,21 +50,21 @@
             this.ma_nv = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btSearch = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panelKH = new System.Windows.Forms.Panel();
+            this.txtMaKH = new System.Windows.Forms.TextBox();
+            this.txtHoten = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtDiachi = new System.Windows.Forms.RichTextBox();
+            this.txtSdt = new System.Windows.Forms.TextBox();
             this.txtTimKH = new System.Windows.Forms.TextBox();
             this.checkKH = new System.Windows.Forms.CheckBox();
             this.btTimKH = new System.Windows.Forms.Button();
-            this.txtDiachi = new System.Windows.Forms.RichTextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.txtSdt = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtHoten = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtMaKH = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.panelKH = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDonhang)).BeginInit();
             this.panel2.SuspendLayout();
@@ -114,6 +114,7 @@
             this.btAdd.TabIndex = 31;
             this.btAdd.Text = "Thêm";
             this.btAdd.UseVisualStyleBackColor = false;
+            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
             // button1
             // 
@@ -318,6 +319,61 @@
             this.panel2.Size = new System.Drawing.Size(349, 335);
             this.panel2.TabIndex = 17;
             // 
+            // panelKH
+            // 
+            this.panelKH.Controls.Add(this.txtMaKH);
+            this.panelKH.Controls.Add(this.txtHoten);
+            this.panelKH.Controls.Add(this.txtEmail);
+            this.panelKH.Controls.Add(this.txtDiachi);
+            this.panelKH.Controls.Add(this.txtSdt);
+            this.panelKH.Enabled = false;
+            this.panelKH.Location = new System.Drawing.Point(79, 43);
+            this.panelKH.Name = "panelKH";
+            this.panelKH.Size = new System.Drawing.Size(248, 250);
+            this.panelKH.TabIndex = 18;
+            // 
+            // txtMaKH
+            // 
+            this.txtMaKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txtMaKH.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtMaKH.Location = new System.Drawing.Point(3, 8);
+            this.txtMaKH.Name = "txtMaKH";
+            this.txtMaKH.ReadOnly = true;
+            this.txtMaKH.Size = new System.Drawing.Size(61, 26);
+            this.txtMaKH.TabIndex = 1;
+            // 
+            // txtHoten
+            // 
+            this.txtHoten.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtHoten.Location = new System.Drawing.Point(3, 50);
+            this.txtHoten.Name = "txtHoten";
+            this.txtHoten.Size = new System.Drawing.Size(230, 26);
+            this.txtHoten.TabIndex = 3;
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtEmail.Location = new System.Drawing.Point(3, 206);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(230, 26);
+            this.txtEmail.TabIndex = 9;
+            // 
+            // txtDiachi
+            // 
+            this.txtDiachi.Location = new System.Drawing.Point(3, 88);
+            this.txtDiachi.Name = "txtDiachi";
+            this.txtDiachi.Size = new System.Drawing.Size(230, 67);
+            this.txtDiachi.TabIndex = 10;
+            this.txtDiachi.Text = "";
+            // 
+            // txtSdt
+            // 
+            this.txtSdt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtSdt.Location = new System.Drawing.Point(3, 169);
+            this.txtSdt.Name = "txtSdt";
+            this.txtSdt.Size = new System.Drawing.Size(230, 26);
+            this.txtSdt.TabIndex = 7;
+            // 
             // txtTimKH
             // 
             this.txtTimKH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -350,22 +406,6 @@
             this.btTimKH.UseVisualStyleBackColor = false;
             this.btTimKH.Click += new System.EventHandler(this.btTimKH_Click);
             // 
-            // txtDiachi
-            // 
-            this.txtDiachi.Location = new System.Drawing.Point(3, 88);
-            this.txtDiachi.Name = "txtDiachi";
-            this.txtDiachi.Size = new System.Drawing.Size(230, 67);
-            this.txtDiachi.TabIndex = 10;
-            this.txtDiachi.Text = "";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtEmail.Location = new System.Drawing.Point(3, 206);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(230, 26);
-            this.txtEmail.TabIndex = 9;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -375,14 +415,6 @@
             this.label6.Size = new System.Drawing.Size(45, 19);
             this.label6.TabIndex = 8;
             this.label6.Text = "Email:";
-            // 
-            // txtSdt
-            // 
-            this.txtSdt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtSdt.Location = new System.Drawing.Point(3, 169);
-            this.txtSdt.Name = "txtSdt";
-            this.txtSdt.Size = new System.Drawing.Size(230, 26);
-            this.txtSdt.TabIndex = 7;
             // 
             // label9
             // 
@@ -404,14 +436,6 @@
             this.label10.TabIndex = 4;
             this.label10.Text = "Địa chỉ:";
             // 
-            // txtHoten
-            // 
-            this.txtHoten.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtHoten.Location = new System.Drawing.Point(3, 50);
-            this.txtHoten.Name = "txtHoten";
-            this.txtHoten.Size = new System.Drawing.Size(230, 26);
-            this.txtHoten.TabIndex = 3;
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -421,16 +445,6 @@
             this.label11.Size = new System.Drawing.Size(53, 19);
             this.label11.TabIndex = 2;
             this.label11.Text = "Họ tên:";
-            // 
-            // txtMaKH
-            // 
-            this.txtMaKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtMaKH.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtMaKH.Location = new System.Drawing.Point(3, 8);
-            this.txtMaKH.Name = "txtMaKH";
-            this.txtMaKH.ReadOnly = true;
-            this.txtMaKH.Size = new System.Drawing.Size(61, 26);
-            this.txtMaKH.TabIndex = 1;
             // 
             // label12
             // 
@@ -451,18 +465,6 @@
             this.label7.Size = new System.Drawing.Size(291, 31);
             this.label7.TabIndex = 18;
             this.label7.Text = "Thông Tin Khách Hàng";
-            // 
-            // panelKH
-            // 
-            this.panelKH.Controls.Add(this.txtMaKH);
-            this.panelKH.Controls.Add(this.txtHoten);
-            this.panelKH.Controls.Add(this.txtEmail);
-            this.panelKH.Controls.Add(this.txtDiachi);
-            this.panelKH.Controls.Add(this.txtSdt);
-            this.panelKH.Location = new System.Drawing.Point(79, 43);
-            this.panelKH.Name = "panelKH";
-            this.panelKH.Size = new System.Drawing.Size(248, 250);
-            this.panelKH.TabIndex = 18;
             // 
             // DonHang_Form
             // 

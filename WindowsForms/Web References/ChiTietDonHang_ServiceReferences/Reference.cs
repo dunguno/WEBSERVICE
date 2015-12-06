@@ -219,28 +219,30 @@ namespace WindowsForms.ChiTietDonHang_ServiceReferences {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Update_ChiTietDonHang", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        public bool Update_ChiTietDonHang(int ma_donhang, int ma_sp, int soluong, int gia) {
+        public bool Update_ChiTietDonHang(int ma_donhang, int ma_sp, [System.Xml.Serialization.XmlElementAttribute("ma_SP")] int ma_SP1, int soluong, int gia) {
             object[] results = this.Invoke("Update_ChiTietDonHang", new object[] {
                         ma_donhang,
                         ma_sp,
+                        ma_SP1,
                         soluong,
                         gia});
             return ((bool)(results[0]));
         }
         
         /// <remarks/>
-        public void Update_ChiTietDonHangAsync(int ma_donhang, int ma_sp, int soluong, int gia) {
-            this.Update_ChiTietDonHangAsync(ma_donhang, ma_sp, soluong, gia, null);
+        public void Update_ChiTietDonHangAsync(int ma_donhang, int ma_sp, int ma_SP1, int soluong, int gia) {
+            this.Update_ChiTietDonHangAsync(ma_donhang, ma_sp, ma_SP1, soluong, gia, null);
         }
         
         /// <remarks/>
-        public void Update_ChiTietDonHangAsync(int ma_donhang, int ma_sp, int soluong, int gia, object userState) {
+        public void Update_ChiTietDonHangAsync(int ma_donhang, int ma_sp, int ma_SP1, int soluong, int gia, object userState) {
             if ((this.Update_ChiTietDonHangOperationCompleted == null)) {
                 this.Update_ChiTietDonHangOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUpdate_ChiTietDonHangOperationCompleted);
             }
             this.InvokeAsync("Update_ChiTietDonHang", new object[] {
                         ma_donhang,
                         ma_sp,
+                        ma_SP1,
                         soluong,
                         gia}, this.Update_ChiTietDonHangOperationCompleted, userState);
         }

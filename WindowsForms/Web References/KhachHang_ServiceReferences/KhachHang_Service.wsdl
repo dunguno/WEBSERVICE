@@ -146,6 +146,23 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="KhachHang_GetLastID">
+        <s:complexType />
+      </s:element>
+      <s:element name="KhachHang_GetLastIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="KhachHang_GetLastIDResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="Delete_KhachHang">
         <s:complexType>
           <s:sequence>
@@ -243,6 +260,12 @@
   <wsdl:message name="KhachHang_CheckUsernameSoapOut">
     <wsdl:part name="parameters" element="tns:KhachHang_CheckUsernameResponse" />
   </wsdl:message>
+  <wsdl:message name="KhachHang_GetLastIDSoapIn">
+    <wsdl:part name="parameters" element="tns:KhachHang_GetLastID" />
+  </wsdl:message>
+  <wsdl:message name="KhachHang_GetLastIDSoapOut">
+    <wsdl:part name="parameters" element="tns:KhachHang_GetLastIDResponse" />
+  </wsdl:message>
   <wsdl:message name="Delete_KhachHangSoapIn">
     <wsdl:part name="parameters" element="tns:Delete_KhachHang" />
   </wsdl:message>
@@ -289,6 +312,10 @@
     <wsdl:operation name="KhachHang_CheckUsername">
       <wsdl:input message="tns:KhachHang_CheckUsernameSoapIn" />
       <wsdl:output message="tns:KhachHang_CheckUsernameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="KhachHang_GetLastID">
+      <wsdl:input message="tns:KhachHang_GetLastIDSoapIn" />
+      <wsdl:output message="tns:KhachHang_GetLastIDSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="Delete_KhachHang">
       <wsdl:input message="tns:Delete_KhachHangSoapIn" />
@@ -361,6 +388,15 @@
     </wsdl:operation>
     <wsdl:operation name="KhachHang_CheckUsername">
       <soap:operation soapAction="http://tempuri.org/KhachHang_CheckUsername" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KhachHang_GetLastID">
+      <soap:operation soapAction="http://tempuri.org/KhachHang_GetLastID" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -454,6 +490,15 @@
     </wsdl:operation>
     <wsdl:operation name="KhachHang_CheckUsername">
       <soap12:operation soapAction="http://tempuri.org/KhachHang_CheckUsername" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KhachHang_GetLastID">
+      <soap12:operation soapAction="http://tempuri.org/KhachHang_GetLastID" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

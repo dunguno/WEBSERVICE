@@ -44,6 +44,8 @@ namespace WindowsForms.KhachHang_ServiceReferences {
         
         private System.Threading.SendOrPostCallback KhachHang_CheckUsernameOperationCompleted;
         
+        private System.Threading.SendOrPostCallback KhachHang_GetLastIDOperationCompleted;
+        
         private System.Threading.SendOrPostCallback Delete_KhachHangOperationCompleted;
         
         private System.Threading.SendOrPostCallback Update_KhachHangOperationCompleted;
@@ -108,6 +110,9 @@ namespace WindowsForms.KhachHang_ServiceReferences {
         
         /// <remarks/>
         public event KhachHang_CheckUsernameCompletedEventHandler KhachHang_CheckUsernameCompleted;
+        
+        /// <remarks/>
+        public event KhachHang_GetLastIDCompletedEventHandler KhachHang_GetLastIDCompleted;
         
         /// <remarks/>
         public event Delete_KhachHangCompletedEventHandler Delete_KhachHangCompleted;
@@ -318,6 +323,33 @@ namespace WindowsForms.KhachHang_ServiceReferences {
             if ((this.KhachHang_CheckUsernameCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.KhachHang_CheckUsernameCompleted(this, new KhachHang_CheckUsernameCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/KhachHang_GetLastID", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataTable KhachHang_GetLastID() {
+            object[] results = this.Invoke("KhachHang_GetLastID", new object[0]);
+            return ((System.Data.DataTable)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void KhachHang_GetLastIDAsync() {
+            this.KhachHang_GetLastIDAsync(null);
+        }
+        
+        /// <remarks/>
+        public void KhachHang_GetLastIDAsync(object userState) {
+            if ((this.KhachHang_GetLastIDOperationCompleted == null)) {
+                this.KhachHang_GetLastIDOperationCompleted = new System.Threading.SendOrPostCallback(this.OnKhachHang_GetLastIDOperationCompleted);
+            }
+            this.InvokeAsync("KhachHang_GetLastID", new object[0], this.KhachHang_GetLastIDOperationCompleted, userState);
+        }
+        
+        private void OnKhachHang_GetLastIDOperationCompleted(object arg) {
+            if ((this.KhachHang_GetLastIDCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.KhachHang_GetLastIDCompleted(this, new KhachHang_GetLastIDCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -618,6 +650,32 @@ namespace WindowsForms.KhachHang_ServiceReferences {
         private object[] results;
         
         internal KhachHang_CheckUsernameCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void KhachHang_GetLastIDCompletedEventHandler(object sender, KhachHang_GetLastIDCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class KhachHang_GetLastIDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal KhachHang_GetLastIDCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
