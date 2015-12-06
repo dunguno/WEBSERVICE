@@ -44,6 +44,17 @@ namespace SERVICE
         }
 
         [WebMethod]
+        public DataTable GetInfo_KhachHangPhone(string sdt)
+        {
+            DataTable mytb = new DataTable("Get_All");
+            string query = "select * from KhachHang where sdt='" + sdt + "'";
+            SqlConnection conn = new SqlConnection(connect.ChuoiKetNoi());
+            SqlDataAdapter da = new SqlDataAdapter(query, conn);
+            da.Fill(mytb);
+            return mytb;
+        }
+
+        [WebMethod]
         public DataTable DonHang_GetByDate(DateTime fromDay, DateTime toDay)
         {
             DataTable mytb = new DataTable("Get_ByID");

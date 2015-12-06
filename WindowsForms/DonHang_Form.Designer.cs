@@ -64,9 +64,11 @@
             this.txtMaKH = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
+            this.panelKH = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDonhang)).BeginInit();
             this.panel2.SuspendLayout();
+            this.panelKH.SuspendLayout();
             this.SuspendLayout();
             // 
             // label3
@@ -301,18 +303,14 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.panelKH);
             this.panel2.Controls.Add(this.txtTimKH);
             this.panel2.Controls.Add(this.checkKH);
             this.panel2.Controls.Add(this.btTimKH);
-            this.panel2.Controls.Add(this.txtDiachi);
-            this.panel2.Controls.Add(this.txtEmail);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Controls.Add(this.txtSdt);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.txtHoten);
             this.panel2.Controls.Add(this.label11);
-            this.panel2.Controls.Add(this.txtMaKH);
             this.panel2.Controls.Add(this.label12);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Location = new System.Drawing.Point(684, 86);
@@ -322,22 +320,23 @@
             // 
             // txtTimKH
             // 
+            this.txtTimKH.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTimKH.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtTimKH.Location = new System.Drawing.Point(97, 297);
+            this.txtTimKH.Location = new System.Drawing.Point(82, 297);
             this.txtTimKH.Name = "txtTimKH";
-            this.txtTimKH.Size = new System.Drawing.Size(162, 26);
+            this.txtTimKH.Size = new System.Drawing.Size(177, 26);
             this.txtTimKH.TabIndex = 34;
             // 
             // checkKH
             // 
             this.checkKH.AutoSize = true;
-            this.checkKH.Location = new System.Drawing.Point(23, 303);
+            this.checkKH.Location = new System.Drawing.Point(23, 304);
             this.checkKH.Name = "checkKH";
             this.checkKH.Size = new System.Drawing.Size(60, 18);
             this.checkKH.TabIndex = 33;
             this.checkKH.Text = "KH mới";
             this.checkKH.UseVisualStyleBackColor = true;
-            this.checkKH.CheckStateChanged += new System.EventHandler(this.checkKH_CheckStateChanged);
+            this.checkKH.CheckedChanged += new System.EventHandler(this.checkKH_CheckedChanged);
             // 
             // btTimKH
             // 
@@ -349,10 +348,11 @@
             this.btTimKH.TabIndex = 32;
             this.btTimKH.Text = "Tìm KH";
             this.btTimKH.UseVisualStyleBackColor = false;
+            this.btTimKH.Click += new System.EventHandler(this.btTimKH_Click);
             // 
             // txtDiachi
             // 
-            this.txtDiachi.Location = new System.Drawing.Point(97, 132);
+            this.txtDiachi.Location = new System.Drawing.Point(3, 88);
             this.txtDiachi.Name = "txtDiachi";
             this.txtDiachi.Size = new System.Drawing.Size(230, 67);
             this.txtDiachi.TabIndex = 10;
@@ -361,7 +361,7 @@
             // txtEmail
             // 
             this.txtEmail.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtEmail.Location = new System.Drawing.Point(97, 246);
+            this.txtEmail.Location = new System.Drawing.Point(3, 206);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(230, 26);
             this.txtEmail.TabIndex = 9;
@@ -370,7 +370,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.Location = new System.Drawing.Point(19, 249);
+            this.label6.Location = new System.Drawing.Point(19, 253);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(45, 19);
             this.label6.TabIndex = 8;
@@ -379,7 +379,7 @@
             // txtSdt
             // 
             this.txtSdt.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtSdt.Location = new System.Drawing.Point(97, 208);
+            this.txtSdt.Location = new System.Drawing.Point(3, 169);
             this.txtSdt.Name = "txtSdt";
             this.txtSdt.Size = new System.Drawing.Size(230, 26);
             this.txtSdt.TabIndex = 7;
@@ -388,7 +388,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label9.Location = new System.Drawing.Point(19, 211);
+            this.label9.Location = new System.Drawing.Point(19, 216);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(40, 19);
             this.label9.TabIndex = 6;
@@ -407,7 +407,7 @@
             // txtHoten
             // 
             this.txtHoten.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtHoten.Location = new System.Drawing.Point(97, 94);
+            this.txtHoten.Location = new System.Drawing.Point(3, 50);
             this.txtHoten.Name = "txtHoten";
             this.txtHoten.Size = new System.Drawing.Size(230, 26);
             this.txtHoten.TabIndex = 3;
@@ -426,7 +426,7 @@
             // 
             this.txtMaKH.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.txtMaKH.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtMaKH.Location = new System.Drawing.Point(97, 56);
+            this.txtMaKH.Location = new System.Drawing.Point(3, 8);
             this.txtMaKH.Name = "txtMaKH";
             this.txtMaKH.ReadOnly = true;
             this.txtMaKH.Size = new System.Drawing.Size(61, 26);
@@ -452,6 +452,18 @@
             this.label7.TabIndex = 18;
             this.label7.Text = "Thông Tin Khách Hàng";
             // 
+            // panelKH
+            // 
+            this.panelKH.Controls.Add(this.txtMaKH);
+            this.panelKH.Controls.Add(this.txtHoten);
+            this.panelKH.Controls.Add(this.txtEmail);
+            this.panelKH.Controls.Add(this.txtDiachi);
+            this.panelKH.Controls.Add(this.txtSdt);
+            this.panelKH.Location = new System.Drawing.Point(79, 43);
+            this.panelKH.Name = "panelKH";
+            this.panelKH.Size = new System.Drawing.Size(248, 250);
+            this.panelKH.TabIndex = 18;
+            // 
             // DonHang_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 14F);
@@ -468,6 +480,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDonhang)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panelKH.ResumeLayout(false);
+            this.panelKH.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -511,5 +525,6 @@
         private System.Windows.Forms.Button btTimKH;
         private System.Windows.Forms.CheckBox checkKH;
         private System.Windows.Forms.TextBox txtTimKH;
+        private System.Windows.Forms.Panel panelKH;
     }
 }

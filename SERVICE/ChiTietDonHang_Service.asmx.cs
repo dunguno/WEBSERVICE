@@ -36,7 +36,28 @@ namespace SERVICE
         {
             try
             {
-                string sql = "delete from ChiTietDonHang where ma_donhang = '" + ma_dh + "' ";
+                string sql = "delete from ChiTietDonHang where ma_donhang = '" + ma_dh + "'";
+                SqlConnection conn = new SqlConnection(connect.ChuoiKetNoi());
+                SqlCommand cm = new SqlCommand();
+                cm.Connection = conn;
+                cm.CommandText = sql;
+                cm.CommandType = CommandType.Text;
+                conn.Open();
+                cm.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        [WebMethod]
+        public bool Delete_SanPham(int ma_dh, int ma_sp)
+        {
+            try
+            {
+                string sql = "delete from ChiTietDonHang where ma_donhang = '" + ma_dh + "' AND ma_sp = '" + ma_sp + "' ";
                 SqlConnection conn = new SqlConnection(connect.ChuoiKetNoi());
                 SqlCommand cm = new SqlCommand();
                 cm.Connection = conn;

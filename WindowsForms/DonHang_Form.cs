@@ -14,6 +14,7 @@ namespace WindowsForms
         DonHang_ServiceReferences.DonHang_Service donhang = new DonHang_ServiceReferences.DonHang_Service();
         ChiTietDonHang_ServiceReferences.ChiTietDonHang_Service ctdh = new ChiTietDonHang_ServiceReferences.ChiTietDonHang_Service();
         NhanVien_ServiceReferences.NhanVien_Service nhanvien = new NhanVien_ServiceReferences.NhanVien_Service();
+        KhachHang_ServiceReferences.KhachHang_Service khachhang = new KhachHang_ServiceReferences.KhachHang_Service();
         public static int ma_donhang;
 
         public DonHang_Form()
@@ -33,11 +34,13 @@ namespace WindowsForms
             {
                 txtTimKH.Enabled = false;
                 btTimKH.Enabled = false;
+                panelKH.Enabled = true;
             }
             else
             {
                 txtTimKH.Enabled = true;
                 btTimKH.Enabled = true;
+                panelKH.Enabled = false;
             }
 
         }
@@ -65,6 +68,23 @@ namespace WindowsForms
             txtSdt.Text = dr["sdt"].ToString();
         }
 
+        private void Search_InfoKhachHang()
+        {
+            string sdt = txtTimKH.Text;
+            DataRow dr = donhang.GetInfo_KhachHangPhone(sdt).Rows[0];
+            if (dr == null)
+            {
+                MessageBox.Show("Không tìm thấy khách hàng!");
+            }
+            else
+            {
+                txtMaKH.Text = dr["ma_kh"].ToString();
+                txtHoten.Text = dr["hoten"].ToString();
+                txtDiachi.Text = dr["diachi"].ToString();
+                txtEmail.Text = dr["email"].ToString();
+                txtSdt.Text = dr["sdt"].ToString();
+            }
+        }
         private void Reset()
         {
             cbNhanvien.Text = "";
@@ -155,9 +175,15 @@ namespace WindowsForms
             frm.ShowDialog();
         }
 
-        private void checkKH_CheckStateChanged(object sender, EventArgs e)
+        private void btTimKH_Click(object sender, EventArgs e)
+        {
+            Search_InfoKhachHang();
+        }
+
+        private void checkKH_CheckedChanged(object sender, EventArgs e)
         {
             Check_KhachHang();
+            Reset();
         }
 
     }

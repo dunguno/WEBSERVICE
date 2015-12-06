@@ -74,6 +74,17 @@ namespace SERVICE
         }
 
         [WebMethod]
+        public DataTable KhachHang_GetByPhone(string sdt)
+        {
+            DataTable mytb = new DataTable("Get_ByName");
+            string query = "select * from KhachHang where sdt ="+sdt+"'";
+            SqlConnection conn = new SqlConnection(connect.ChuoiKetNoi());
+            SqlDataAdapter da = new SqlDataAdapter(query, conn);
+            da.Fill(mytb);
+            return mytb;
+        }
+
+        [WebMethod]
         public DataTable KhachHang_GetByUsername(string username)
         {
             DataTable mytb = new DataTable("Get_ByName");

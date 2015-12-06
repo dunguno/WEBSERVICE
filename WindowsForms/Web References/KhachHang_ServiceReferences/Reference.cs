@@ -34,7 +34,15 @@ namespace WindowsForms.KhachHang_ServiceReferences {
         
         private System.Threading.SendOrPostCallback KhachHang_GetAllOperationCompleted;
         
+        private System.Threading.SendOrPostCallback KhachHang_GetByIDOperationCompleted;
+        
         private System.Threading.SendOrPostCallback KhachHang_GetByNameOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback KhachHang_GetByPhoneOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback KhachHang_GetByUsernameOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback KhachHang_CheckUsernameOperationCompleted;
         
         private System.Threading.SendOrPostCallback Delete_KhachHangOperationCompleted;
         
@@ -87,7 +95,19 @@ namespace WindowsForms.KhachHang_ServiceReferences {
         public event KhachHang_GetAllCompletedEventHandler KhachHang_GetAllCompleted;
         
         /// <remarks/>
+        public event KhachHang_GetByIDCompletedEventHandler KhachHang_GetByIDCompleted;
+        
+        /// <remarks/>
         public event KhachHang_GetByNameCompletedEventHandler KhachHang_GetByNameCompleted;
+        
+        /// <remarks/>
+        public event KhachHang_GetByPhoneCompletedEventHandler KhachHang_GetByPhoneCompleted;
+        
+        /// <remarks/>
+        public event KhachHang_GetByUsernameCompletedEventHandler KhachHang_GetByUsernameCompleted;
+        
+        /// <remarks/>
+        public event KhachHang_CheckUsernameCompletedEventHandler KhachHang_CheckUsernameCompleted;
         
         /// <remarks/>
         public event Delete_KhachHangCompletedEventHandler Delete_KhachHangCompleted;
@@ -157,6 +177,35 @@ namespace WindowsForms.KhachHang_ServiceReferences {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/KhachHang_GetByID", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataTable KhachHang_GetByID(int ma_kh) {
+            object[] results = this.Invoke("KhachHang_GetByID", new object[] {
+                        ma_kh});
+            return ((System.Data.DataTable)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void KhachHang_GetByIDAsync(int ma_kh) {
+            this.KhachHang_GetByIDAsync(ma_kh, null);
+        }
+        
+        /// <remarks/>
+        public void KhachHang_GetByIDAsync(int ma_kh, object userState) {
+            if ((this.KhachHang_GetByIDOperationCompleted == null)) {
+                this.KhachHang_GetByIDOperationCompleted = new System.Threading.SendOrPostCallback(this.OnKhachHang_GetByIDOperationCompleted);
+            }
+            this.InvokeAsync("KhachHang_GetByID", new object[] {
+                        ma_kh}, this.KhachHang_GetByIDOperationCompleted, userState);
+        }
+        
+        private void OnKhachHang_GetByIDOperationCompleted(object arg) {
+            if ((this.KhachHang_GetByIDCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.KhachHang_GetByIDCompleted(this, new KhachHang_GetByIDCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/KhachHang_GetByName", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public System.Data.DataTable KhachHang_GetByName(string ten_kh) {
             object[] results = this.Invoke("KhachHang_GetByName", new object[] {
@@ -182,6 +231,93 @@ namespace WindowsForms.KhachHang_ServiceReferences {
             if ((this.KhachHang_GetByNameCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.KhachHang_GetByNameCompleted(this, new KhachHang_GetByNameCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/KhachHang_GetByPhone", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataTable KhachHang_GetByPhone(string sdt) {
+            object[] results = this.Invoke("KhachHang_GetByPhone", new object[] {
+                        sdt});
+            return ((System.Data.DataTable)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void KhachHang_GetByPhoneAsync(string sdt) {
+            this.KhachHang_GetByPhoneAsync(sdt, null);
+        }
+        
+        /// <remarks/>
+        public void KhachHang_GetByPhoneAsync(string sdt, object userState) {
+            if ((this.KhachHang_GetByPhoneOperationCompleted == null)) {
+                this.KhachHang_GetByPhoneOperationCompleted = new System.Threading.SendOrPostCallback(this.OnKhachHang_GetByPhoneOperationCompleted);
+            }
+            this.InvokeAsync("KhachHang_GetByPhone", new object[] {
+                        sdt}, this.KhachHang_GetByPhoneOperationCompleted, userState);
+        }
+        
+        private void OnKhachHang_GetByPhoneOperationCompleted(object arg) {
+            if ((this.KhachHang_GetByPhoneCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.KhachHang_GetByPhoneCompleted(this, new KhachHang_GetByPhoneCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/KhachHang_GetByUsername", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataTable KhachHang_GetByUsername(string username) {
+            object[] results = this.Invoke("KhachHang_GetByUsername", new object[] {
+                        username});
+            return ((System.Data.DataTable)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void KhachHang_GetByUsernameAsync(string username) {
+            this.KhachHang_GetByUsernameAsync(username, null);
+        }
+        
+        /// <remarks/>
+        public void KhachHang_GetByUsernameAsync(string username, object userState) {
+            if ((this.KhachHang_GetByUsernameOperationCompleted == null)) {
+                this.KhachHang_GetByUsernameOperationCompleted = new System.Threading.SendOrPostCallback(this.OnKhachHang_GetByUsernameOperationCompleted);
+            }
+            this.InvokeAsync("KhachHang_GetByUsername", new object[] {
+                        username}, this.KhachHang_GetByUsernameOperationCompleted, userState);
+        }
+        
+        private void OnKhachHang_GetByUsernameOperationCompleted(object arg) {
+            if ((this.KhachHang_GetByUsernameCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.KhachHang_GetByUsernameCompleted(this, new KhachHang_GetByUsernameCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/KhachHang_CheckUsername", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataTable KhachHang_CheckUsername(string username) {
+            object[] results = this.Invoke("KhachHang_CheckUsername", new object[] {
+                        username});
+            return ((System.Data.DataTable)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void KhachHang_CheckUsernameAsync(string username) {
+            this.KhachHang_CheckUsernameAsync(username, null);
+        }
+        
+        /// <remarks/>
+        public void KhachHang_CheckUsernameAsync(string username, object userState) {
+            if ((this.KhachHang_CheckUsernameOperationCompleted == null)) {
+                this.KhachHang_CheckUsernameOperationCompleted = new System.Threading.SendOrPostCallback(this.OnKhachHang_CheckUsernameOperationCompleted);
+            }
+            this.InvokeAsync("KhachHang_CheckUsername", new object[] {
+                        username}, this.KhachHang_CheckUsernameOperationCompleted, userState);
+        }
+        
+        private void OnKhachHang_CheckUsernameOperationCompleted(object arg) {
+            if ((this.KhachHang_CheckUsernameCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.KhachHang_CheckUsernameCompleted(this, new KhachHang_CheckUsernameCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -367,6 +503,32 @@ namespace WindowsForms.KhachHang_ServiceReferences {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void KhachHang_GetByIDCompletedEventHandler(object sender, KhachHang_GetByIDCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class KhachHang_GetByIDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal KhachHang_GetByIDCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
     public delegate void KhachHang_GetByNameCompletedEventHandler(object sender, KhachHang_GetByNameCompletedEventArgs e);
     
     /// <remarks/>
@@ -378,6 +540,84 @@ namespace WindowsForms.KhachHang_ServiceReferences {
         private object[] results;
         
         internal KhachHang_GetByNameCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void KhachHang_GetByPhoneCompletedEventHandler(object sender, KhachHang_GetByPhoneCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class KhachHang_GetByPhoneCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal KhachHang_GetByPhoneCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void KhachHang_GetByUsernameCompletedEventHandler(object sender, KhachHang_GetByUsernameCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class KhachHang_GetByUsernameCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal KhachHang_GetByUsernameCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void KhachHang_CheckUsernameCompletedEventHandler(object sender, KhachHang_CheckUsernameCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class KhachHang_CheckUsernameCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal KhachHang_CheckUsernameCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

@@ -21,3 +21,4 @@ C:\Users\Huy Do\Desktop\WebService_Ver16\SERVICE\bin\SERVICE.dll
 C:\Users\Huy Do\Desktop\WebService_Ver16\SERVICE\bin\SERVICE.pdb
 C:\Users\Huy Do\Desktop\WebService_Ver16\SERVICE\obj\Debug\SERVICE.dll
 C:\Users\Huy Do\Desktop\WebService_Ver16\SERVICE\obj\Debug\SERVICE.pdb
+C:\Users\Huy Do\Desktop\WebService_Ver16\SERVICE\obj\Debug\SERVICE.csprojResolveAssemblyReference.cache

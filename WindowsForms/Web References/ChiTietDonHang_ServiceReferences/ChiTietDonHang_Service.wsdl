@@ -37,6 +37,55 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="Delete_SanPham">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ma_dh" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ma_sp" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Delete_SanPhamResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Delete_SanPhamResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insert_ChiTietDonHang">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ma_dh" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ma_sp" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="soluong" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="gia" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Insert_ChiTietDonHangResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Insert_ChiTietDonHangResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_ChiTietDonHang">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ma_donhang" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="ma_sp" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="soluong" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="gia" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_ChiTietDonHangResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="Update_ChiTietDonHangResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="ChiTietDonHang_GetByIDSoapIn">
@@ -51,6 +100,24 @@
   <wsdl:message name="Delete_ChiTietDonHangSoapOut">
     <wsdl:part name="parameters" element="tns:Delete_ChiTietDonHangResponse" />
   </wsdl:message>
+  <wsdl:message name="Delete_SanPhamSoapIn">
+    <wsdl:part name="parameters" element="tns:Delete_SanPham" />
+  </wsdl:message>
+  <wsdl:message name="Delete_SanPhamSoapOut">
+    <wsdl:part name="parameters" element="tns:Delete_SanPhamResponse" />
+  </wsdl:message>
+  <wsdl:message name="Insert_ChiTietDonHangSoapIn">
+    <wsdl:part name="parameters" element="tns:Insert_ChiTietDonHang" />
+  </wsdl:message>
+  <wsdl:message name="Insert_ChiTietDonHangSoapOut">
+    <wsdl:part name="parameters" element="tns:Insert_ChiTietDonHangResponse" />
+  </wsdl:message>
+  <wsdl:message name="Update_ChiTietDonHangSoapIn">
+    <wsdl:part name="parameters" element="tns:Update_ChiTietDonHang" />
+  </wsdl:message>
+  <wsdl:message name="Update_ChiTietDonHangSoapOut">
+    <wsdl:part name="parameters" element="tns:Update_ChiTietDonHangResponse" />
+  </wsdl:message>
   <wsdl:portType name="ChiTietDonHang_ServiceSoap">
     <wsdl:operation name="ChiTietDonHang_GetByID">
       <wsdl:input message="tns:ChiTietDonHang_GetByIDSoapIn" />
@@ -59,6 +126,18 @@
     <wsdl:operation name="Delete_ChiTietDonHang">
       <wsdl:input message="tns:Delete_ChiTietDonHangSoapIn" />
       <wsdl:output message="tns:Delete_ChiTietDonHangSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Delete_SanPham">
+      <wsdl:input message="tns:Delete_SanPhamSoapIn" />
+      <wsdl:output message="tns:Delete_SanPhamSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Insert_ChiTietDonHang">
+      <wsdl:input message="tns:Insert_ChiTietDonHangSoapIn" />
+      <wsdl:output message="tns:Insert_ChiTietDonHangSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_ChiTietDonHang">
+      <wsdl:input message="tns:Update_ChiTietDonHangSoapIn" />
+      <wsdl:output message="tns:Update_ChiTietDonHangSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="ChiTietDonHang_ServiceSoap" type="tns:ChiTietDonHang_ServiceSoap">
@@ -81,6 +160,33 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="Delete_SanPham">
+      <soap:operation soapAction="http://tempuri.org/Delete_SanPham" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_ChiTietDonHang">
+      <soap:operation soapAction="http://tempuri.org/Insert_ChiTietDonHang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_ChiTietDonHang">
+      <soap:operation soapAction="http://tempuri.org/Update_ChiTietDonHang" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="ChiTietDonHang_ServiceSoap12" type="tns:ChiTietDonHang_ServiceSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -95,6 +201,33 @@
     </wsdl:operation>
     <wsdl:operation name="Delete_ChiTietDonHang">
       <soap12:operation soapAction="http://tempuri.org/Delete_ChiTietDonHang" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Delete_SanPham">
+      <soap12:operation soapAction="http://tempuri.org/Delete_SanPham" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Insert_ChiTietDonHang">
+      <soap12:operation soapAction="http://tempuri.org/Insert_ChiTietDonHang" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_ChiTietDonHang">
+      <soap12:operation soapAction="http://tempuri.org/Update_ChiTietDonHang" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

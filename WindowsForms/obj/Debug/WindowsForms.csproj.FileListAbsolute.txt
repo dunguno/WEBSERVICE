@@ -68,3 +68,4 @@ C:\Users\Huy Do\Desktop\WebService_Ver16\WindowsForms\obj\Debug\WindowsForms.pdb
 C:\Users\Huy Do\Desktop\WebService_Ver16\WindowsForms\obj\Debug\RdlCompile.cache
 C:\Users\Huy Do\Desktop\WebService_Ver16\WindowsForms\obj\Debug\RdlCompile.compiled
 C:\Users\Huy Do\Desktop\WebService_Ver16\WindowsForms\obj\Debug\WindowsForms.InDonHang_Form.resources
+C:\Users\Huy Do\Desktop\WebService_Ver16\WindowsForms\obj\Debug\WindowsForms.csprojResolveAssemblyReference.cache

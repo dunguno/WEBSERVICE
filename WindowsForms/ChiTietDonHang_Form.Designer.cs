@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txtMaDH = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -41,8 +41,11 @@
             this.thanh_tien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btAdd = new System.Windows.Forms.Button();
             this.txtSoluong = new System.Windows.Forms.NumericUpDown();
+            this.btDel = new System.Windows.Forms.Button();
             this.txtThanhtien = new System.Windows.Forms.TextBox();
+            this.btEdit = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtGia = new System.Windows.Forms.TextBox();
@@ -121,9 +124,9 @@
             // 
             this.gia.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.gia.DataPropertyName = "gia";
-            dataGridViewCellStyle3.Format = "C0";
-            dataGridViewCellStyle3.NullValue = null;
-            this.gia.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Format = "C0";
+            dataGridViewCellStyle1.NullValue = null;
+            this.gia.DefaultCellStyle = dataGridViewCellStyle1;
             this.gia.HeaderText = "Giá";
             this.gia.Name = "gia";
             this.gia.Width = 120;
@@ -140,9 +143,9 @@
             // 
             this.thanh_tien.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.thanh_tien.DataPropertyName = "thanh_tien";
-            dataGridViewCellStyle4.Format = "C0";
-            dataGridViewCellStyle4.NullValue = null;
-            this.thanh_tien.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Format = "C0";
+            dataGridViewCellStyle2.NullValue = null;
+            this.thanh_tien.DefaultCellStyle = dataGridViewCellStyle2;
             this.thanh_tien.HeaderText = "Thành tiền";
             this.thanh_tien.Name = "thanh_tien";
             this.thanh_tien.Width = 120;
@@ -160,8 +163,11 @@
             // panel2
             // 
             this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.btAdd);
             this.panel2.Controls.Add(this.txtSoluong);
+            this.panel2.Controls.Add(this.btDel);
             this.panel2.Controls.Add(this.txtThanhtien);
+            this.panel2.Controls.Add(this.btEdit);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.txtGia);
@@ -173,15 +179,38 @@
             this.panel2.Size = new System.Drawing.Size(684, 137);
             this.panel2.TabIndex = 16;
             // 
+            // btAdd
+            // 
+            this.btAdd.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btAdd.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btAdd.Location = new System.Drawing.Point(468, 89);
+            this.btAdd.Name = "btAdd";
+            this.btAdd.Size = new System.Drawing.Size(90, 37);
+            this.btAdd.TabIndex = 34;
+            this.btAdd.Text = "Thêm";
+            this.btAdd.UseVisualStyleBackColor = false;
+            // 
             // txtSoluong
             // 
             this.txtSoluong.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSoluong.Location = new System.Drawing.Point(127, 96);
+            this.txtSoluong.Location = new System.Drawing.Point(368, 48);
             this.txtSoluong.Name = "txtSoluong";
-            this.txtSoluong.Size = new System.Drawing.Size(102, 26);
+            this.txtSoluong.Size = new System.Drawing.Size(70, 26);
             this.txtSoluong.TabIndex = 8;
             this.txtSoluong.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.txtSoluong.ValueChanged += new System.EventHandler(this.txtSoluong_ValueChanged);
+            // 
+            // btDel
+            // 
+            this.btDel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btDel.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btDel.Location = new System.Drawing.Point(576, 89);
+            this.btDel.Name = "btDel";
+            this.btDel.Size = new System.Drawing.Size(90, 37);
+            this.btDel.TabIndex = 33;
+            this.btDel.Text = "Xóa";
+            this.btDel.UseVisualStyleBackColor = false;
+            this.btDel.Click += new System.EventHandler(this.btDel_Click);
             // 
             // txtThanhtien
             // 
@@ -192,6 +221,17 @@
             this.txtThanhtien.Name = "txtThanhtien";
             this.txtThanhtien.Size = new System.Drawing.Size(187, 26);
             this.txtThanhtien.TabIndex = 7;
+            // 
+            // btEdit
+            // 
+            this.btEdit.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btEdit.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btEdit.Location = new System.Drawing.Point(353, 89);
+            this.btEdit.Name = "btEdit";
+            this.btEdit.Size = new System.Drawing.Size(90, 37);
+            this.btEdit.TabIndex = 32;
+            this.btEdit.Text = "Cập nhật";
+            this.btEdit.UseVisualStyleBackColor = false;
             // 
             // label6
             // 
@@ -207,7 +247,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label5.Location = new System.Drawing.Point(25, 103);
+            this.label5.Location = new System.Drawing.Point(295, 50);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 19);
             this.label5.TabIndex = 4;
@@ -216,16 +256,16 @@
             // txtGia
             // 
             this.txtGia.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtGia.Location = new System.Drawing.Point(127, 50);
+            this.txtGia.Location = new System.Drawing.Point(74, 50);
             this.txtGia.Name = "txtGia";
-            this.txtGia.Size = new System.Drawing.Size(150, 26);
+            this.txtGia.Size = new System.Drawing.Size(174, 26);
             this.txtGia.TabIndex = 3;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label4.Location = new System.Drawing.Point(25, 57);
+            this.label4.Location = new System.Drawing.Point(25, 53);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(33, 19);
             this.label4.TabIndex = 2;
@@ -295,5 +335,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn gia;
         private System.Windows.Forms.DataGridViewTextBoxColumn so_luong;
         private System.Windows.Forms.DataGridViewTextBoxColumn thanh_tien;
+        private System.Windows.Forms.Button btAdd;
+        private System.Windows.Forms.Button btDel;
+        private System.Windows.Forms.Button btEdit;
     }
 }

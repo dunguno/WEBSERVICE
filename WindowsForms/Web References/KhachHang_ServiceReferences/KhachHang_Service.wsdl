@@ -41,6 +41,27 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="KhachHang_GetByID">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ma_kh" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KhachHang_GetByIDResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="KhachHang_GetByIDResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
       <s:element name="KhachHang_GetByName">
         <s:complexType>
           <s:sequence>
@@ -52,6 +73,69 @@
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="KhachHang_GetByNameResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KhachHang_GetByPhone">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sdt" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KhachHang_GetByPhoneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="KhachHang_GetByPhoneResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KhachHang_GetByUsername">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KhachHang_GetByUsernameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="KhachHang_GetByUsernameResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KhachHang_CheckUsername">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="username" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="KhachHang_CheckUsernameResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="KhachHang_CheckUsernameResult">
               <s:complexType>
                 <s:sequence>
                   <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
@@ -129,11 +213,35 @@
   <wsdl:message name="KhachHang_GetAllSoapOut">
     <wsdl:part name="parameters" element="tns:KhachHang_GetAllResponse" />
   </wsdl:message>
+  <wsdl:message name="KhachHang_GetByIDSoapIn">
+    <wsdl:part name="parameters" element="tns:KhachHang_GetByID" />
+  </wsdl:message>
+  <wsdl:message name="KhachHang_GetByIDSoapOut">
+    <wsdl:part name="parameters" element="tns:KhachHang_GetByIDResponse" />
+  </wsdl:message>
   <wsdl:message name="KhachHang_GetByNameSoapIn">
     <wsdl:part name="parameters" element="tns:KhachHang_GetByName" />
   </wsdl:message>
   <wsdl:message name="KhachHang_GetByNameSoapOut">
     <wsdl:part name="parameters" element="tns:KhachHang_GetByNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="KhachHang_GetByPhoneSoapIn">
+    <wsdl:part name="parameters" element="tns:KhachHang_GetByPhone" />
+  </wsdl:message>
+  <wsdl:message name="KhachHang_GetByPhoneSoapOut">
+    <wsdl:part name="parameters" element="tns:KhachHang_GetByPhoneResponse" />
+  </wsdl:message>
+  <wsdl:message name="KhachHang_GetByUsernameSoapIn">
+    <wsdl:part name="parameters" element="tns:KhachHang_GetByUsername" />
+  </wsdl:message>
+  <wsdl:message name="KhachHang_GetByUsernameSoapOut">
+    <wsdl:part name="parameters" element="tns:KhachHang_GetByUsernameResponse" />
+  </wsdl:message>
+  <wsdl:message name="KhachHang_CheckUsernameSoapIn">
+    <wsdl:part name="parameters" element="tns:KhachHang_CheckUsername" />
+  </wsdl:message>
+  <wsdl:message name="KhachHang_CheckUsernameSoapOut">
+    <wsdl:part name="parameters" element="tns:KhachHang_CheckUsernameResponse" />
   </wsdl:message>
   <wsdl:message name="Delete_KhachHangSoapIn">
     <wsdl:part name="parameters" element="tns:Delete_KhachHang" />
@@ -162,9 +270,25 @@
       <wsdl:input message="tns:KhachHang_GetAllSoapIn" />
       <wsdl:output message="tns:KhachHang_GetAllSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="KhachHang_GetByID">
+      <wsdl:input message="tns:KhachHang_GetByIDSoapIn" />
+      <wsdl:output message="tns:KhachHang_GetByIDSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="KhachHang_GetByName">
       <wsdl:input message="tns:KhachHang_GetByNameSoapIn" />
       <wsdl:output message="tns:KhachHang_GetByNameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="KhachHang_GetByPhone">
+      <wsdl:input message="tns:KhachHang_GetByPhoneSoapIn" />
+      <wsdl:output message="tns:KhachHang_GetByPhoneSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="KhachHang_GetByUsername">
+      <wsdl:input message="tns:KhachHang_GetByUsernameSoapIn" />
+      <wsdl:output message="tns:KhachHang_GetByUsernameSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="KhachHang_CheckUsername">
+      <wsdl:input message="tns:KhachHang_CheckUsernameSoapIn" />
+      <wsdl:output message="tns:KhachHang_CheckUsernameSoapOut" />
     </wsdl:operation>
     <wsdl:operation name="Delete_KhachHang">
       <wsdl:input message="tns:Delete_KhachHangSoapIn" />
@@ -199,8 +323,44 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="KhachHang_GetByID">
+      <soap:operation soapAction="http://tempuri.org/KhachHang_GetByID" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="KhachHang_GetByName">
       <soap:operation soapAction="http://tempuri.org/KhachHang_GetByName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KhachHang_GetByPhone">
+      <soap:operation soapAction="http://tempuri.org/KhachHang_GetByPhone" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KhachHang_GetByUsername">
+      <soap:operation soapAction="http://tempuri.org/KhachHang_GetByUsername" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KhachHang_CheckUsername">
+      <soap:operation soapAction="http://tempuri.org/KhachHang_CheckUsername" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -256,8 +416,44 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="KhachHang_GetByID">
+      <soap12:operation soapAction="http://tempuri.org/KhachHang_GetByID" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="KhachHang_GetByName">
       <soap12:operation soapAction="http://tempuri.org/KhachHang_GetByName" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KhachHang_GetByPhone">
+      <soap12:operation soapAction="http://tempuri.org/KhachHang_GetByPhone" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KhachHang_GetByUsername">
+      <soap12:operation soapAction="http://tempuri.org/KhachHang_GetByUsername" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="KhachHang_CheckUsername">
+      <soap12:operation soapAction="http://tempuri.org/KhachHang_CheckUsername" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

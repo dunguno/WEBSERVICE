@@ -34,6 +34,12 @@ namespace WindowsForms.ChiTietDonHang_ServiceReferences {
         
         private System.Threading.SendOrPostCallback Delete_ChiTietDonHangOperationCompleted;
         
+        private System.Threading.SendOrPostCallback Delete_SanPhamOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Insert_ChiTietDonHangOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Update_ChiTietDonHangOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -77,6 +83,15 @@ namespace WindowsForms.ChiTietDonHang_ServiceReferences {
         
         /// <remarks/>
         public event Delete_ChiTietDonHangCompletedEventHandler Delete_ChiTietDonHangCompleted;
+        
+        /// <remarks/>
+        public event Delete_SanPhamCompletedEventHandler Delete_SanPhamCompleted;
+        
+        /// <remarks/>
+        public event Insert_ChiTietDonHangCompletedEventHandler Insert_ChiTietDonHangCompleted;
+        
+        /// <remarks/>
+        public event Update_ChiTietDonHangCompletedEventHandler Update_ChiTietDonHangCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/ChiTietDonHang_GetByID", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -133,6 +148,107 @@ namespace WindowsForms.ChiTietDonHang_ServiceReferences {
             if ((this.Delete_ChiTietDonHangCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.Delete_ChiTietDonHangCompleted(this, new Delete_ChiTietDonHangCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Delete_SanPham", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool Delete_SanPham(int ma_dh, int ma_sp) {
+            object[] results = this.Invoke("Delete_SanPham", new object[] {
+                        ma_dh,
+                        ma_sp});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Delete_SanPhamAsync(int ma_dh, int ma_sp) {
+            this.Delete_SanPhamAsync(ma_dh, ma_sp, null);
+        }
+        
+        /// <remarks/>
+        public void Delete_SanPhamAsync(int ma_dh, int ma_sp, object userState) {
+            if ((this.Delete_SanPhamOperationCompleted == null)) {
+                this.Delete_SanPhamOperationCompleted = new System.Threading.SendOrPostCallback(this.OnDelete_SanPhamOperationCompleted);
+            }
+            this.InvokeAsync("Delete_SanPham", new object[] {
+                        ma_dh,
+                        ma_sp}, this.Delete_SanPhamOperationCompleted, userState);
+        }
+        
+        private void OnDelete_SanPhamOperationCompleted(object arg) {
+            if ((this.Delete_SanPhamCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Delete_SanPhamCompleted(this, new Delete_SanPhamCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Insert_ChiTietDonHang", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool Insert_ChiTietDonHang(int ma_dh, int ma_sp, int soluong, int gia) {
+            object[] results = this.Invoke("Insert_ChiTietDonHang", new object[] {
+                        ma_dh,
+                        ma_sp,
+                        soluong,
+                        gia});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Insert_ChiTietDonHangAsync(int ma_dh, int ma_sp, int soluong, int gia) {
+            this.Insert_ChiTietDonHangAsync(ma_dh, ma_sp, soluong, gia, null);
+        }
+        
+        /// <remarks/>
+        public void Insert_ChiTietDonHangAsync(int ma_dh, int ma_sp, int soluong, int gia, object userState) {
+            if ((this.Insert_ChiTietDonHangOperationCompleted == null)) {
+                this.Insert_ChiTietDonHangOperationCompleted = new System.Threading.SendOrPostCallback(this.OnInsert_ChiTietDonHangOperationCompleted);
+            }
+            this.InvokeAsync("Insert_ChiTietDonHang", new object[] {
+                        ma_dh,
+                        ma_sp,
+                        soluong,
+                        gia}, this.Insert_ChiTietDonHangOperationCompleted, userState);
+        }
+        
+        private void OnInsert_ChiTietDonHangOperationCompleted(object arg) {
+            if ((this.Insert_ChiTietDonHangCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Insert_ChiTietDonHangCompleted(this, new Insert_ChiTietDonHangCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Update_ChiTietDonHang", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool Update_ChiTietDonHang(int ma_donhang, int ma_sp, int soluong, int gia) {
+            object[] results = this.Invoke("Update_ChiTietDonHang", new object[] {
+                        ma_donhang,
+                        ma_sp,
+                        soluong,
+                        gia});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Update_ChiTietDonHangAsync(int ma_donhang, int ma_sp, int soluong, int gia) {
+            this.Update_ChiTietDonHangAsync(ma_donhang, ma_sp, soluong, gia, null);
+        }
+        
+        /// <remarks/>
+        public void Update_ChiTietDonHangAsync(int ma_donhang, int ma_sp, int soluong, int gia, object userState) {
+            if ((this.Update_ChiTietDonHangOperationCompleted == null)) {
+                this.Update_ChiTietDonHangOperationCompleted = new System.Threading.SendOrPostCallback(this.OnUpdate_ChiTietDonHangOperationCompleted);
+            }
+            this.InvokeAsync("Update_ChiTietDonHang", new object[] {
+                        ma_donhang,
+                        ma_sp,
+                        soluong,
+                        gia}, this.Update_ChiTietDonHangOperationCompleted, userState);
+        }
+        
+        private void OnUpdate_ChiTietDonHangOperationCompleted(object arg) {
+            if ((this.Update_ChiTietDonHangCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Update_ChiTietDonHangCompleted(this, new Update_ChiTietDonHangCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -194,6 +310,84 @@ namespace WindowsForms.ChiTietDonHang_ServiceReferences {
         private object[] results;
         
         internal Delete_ChiTietDonHangCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void Delete_SanPhamCompletedEventHandler(object sender, Delete_SanPhamCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Delete_SanPhamCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Delete_SanPhamCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void Insert_ChiTietDonHangCompletedEventHandler(object sender, Insert_ChiTietDonHangCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Insert_ChiTietDonHangCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Insert_ChiTietDonHangCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void Update_ChiTietDonHangCompletedEventHandler(object sender, Update_ChiTietDonHangCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Update_ChiTietDonHangCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Update_ChiTietDonHangCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

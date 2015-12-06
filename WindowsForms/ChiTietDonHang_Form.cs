@@ -75,5 +75,19 @@ namespace WindowsForms
         {
             txtThanhtien.Text = (int.Parse(txtSoluong.Value.ToString()) * int.Parse(txtGia.Text)).ToString("0,00.##");
         }
+
+        private void btDel_Click(object sender, EventArgs e)
+        {
+            int ma_sp = int.Parse(dgvChiTietDonHang.Rows[dgvChiTietDonHang.CurrentCell.RowIndex].Cells["ma_sp"].Value.ToString());
+            if(ctdn.Delete_SanPham(_ma_donhang, ma_sp))
+            {
+                MessageBox.Show("Xóa thành công");
+                LoadData(_ma_donhang);
+            }
+            else
+            {
+                MessageBox.Show("Có lỗi");
+            }
+        }
     }
 }

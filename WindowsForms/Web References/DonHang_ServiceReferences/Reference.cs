@@ -34,11 +34,17 @@ namespace WindowsForms.DonHang_ServiceReferences {
         
         private System.Threading.SendOrPostCallback GetInfo_KhachHangOperationCompleted;
         
+        private System.Threading.SendOrPostCallback GetInfo_KhachHangPhoneOperationCompleted;
+        
         private System.Threading.SendOrPostCallback DonHang_GetByDateOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback DonHang_GetByCustomerOperationCompleted;
         
         private System.Threading.SendOrPostCallback Delete_DonHangOperationCompleted;
         
         private System.Threading.SendOrPostCallback Update_DonHangOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback Insert_DonHangOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
@@ -85,13 +91,22 @@ namespace WindowsForms.DonHang_ServiceReferences {
         public event GetInfo_KhachHangCompletedEventHandler GetInfo_KhachHangCompleted;
         
         /// <remarks/>
+        public event GetInfo_KhachHangPhoneCompletedEventHandler GetInfo_KhachHangPhoneCompleted;
+        
+        /// <remarks/>
         public event DonHang_GetByDateCompletedEventHandler DonHang_GetByDateCompleted;
+        
+        /// <remarks/>
+        public event DonHang_GetByCustomerCompletedEventHandler DonHang_GetByCustomerCompleted;
         
         /// <remarks/>
         public event Delete_DonHangCompletedEventHandler Delete_DonHangCompleted;
         
         /// <remarks/>
         public event Update_DonHangCompletedEventHandler Update_DonHangCompleted;
+        
+        /// <remarks/>
+        public event Insert_DonHangCompletedEventHandler Insert_DonHangCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/DonHang_GetAll", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -150,6 +165,35 @@ namespace WindowsForms.DonHang_ServiceReferences {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/GetInfo_KhachHangPhone", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataTable GetInfo_KhachHangPhone(string sdt) {
+            object[] results = this.Invoke("GetInfo_KhachHangPhone", new object[] {
+                        sdt});
+            return ((System.Data.DataTable)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GetInfo_KhachHangPhoneAsync(string sdt) {
+            this.GetInfo_KhachHangPhoneAsync(sdt, null);
+        }
+        
+        /// <remarks/>
+        public void GetInfo_KhachHangPhoneAsync(string sdt, object userState) {
+            if ((this.GetInfo_KhachHangPhoneOperationCompleted == null)) {
+                this.GetInfo_KhachHangPhoneOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGetInfo_KhachHangPhoneOperationCompleted);
+            }
+            this.InvokeAsync("GetInfo_KhachHangPhone", new object[] {
+                        sdt}, this.GetInfo_KhachHangPhoneOperationCompleted, userState);
+        }
+        
+        private void OnGetInfo_KhachHangPhoneOperationCompleted(object arg) {
+            if ((this.GetInfo_KhachHangPhoneCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GetInfo_KhachHangPhoneCompleted(this, new GetInfo_KhachHangPhoneCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/DonHang_GetByDate", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         public System.Data.DataTable DonHang_GetByDate(System.DateTime fromDay, System.DateTime toDay) {
             object[] results = this.Invoke("DonHang_GetByDate", new object[] {
@@ -177,6 +221,35 @@ namespace WindowsForms.DonHang_ServiceReferences {
             if ((this.DonHang_GetByDateCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.DonHang_GetByDateCompleted(this, new DonHang_GetByDateCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/DonHang_GetByCustomer", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public System.Data.DataTable DonHang_GetByCustomer(int ma_kh) {
+            object[] results = this.Invoke("DonHang_GetByCustomer", new object[] {
+                        ma_kh});
+            return ((System.Data.DataTable)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void DonHang_GetByCustomerAsync(int ma_kh) {
+            this.DonHang_GetByCustomerAsync(ma_kh, null);
+        }
+        
+        /// <remarks/>
+        public void DonHang_GetByCustomerAsync(int ma_kh, object userState) {
+            if ((this.DonHang_GetByCustomerOperationCompleted == null)) {
+                this.DonHang_GetByCustomerOperationCompleted = new System.Threading.SendOrPostCallback(this.OnDonHang_GetByCustomerOperationCompleted);
+            }
+            this.InvokeAsync("DonHang_GetByCustomer", new object[] {
+                        ma_kh}, this.DonHang_GetByCustomerOperationCompleted, userState);
+        }
+        
+        private void OnDonHang_GetByCustomerOperationCompleted(object arg) {
+            if ((this.DonHang_GetByCustomerCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.DonHang_GetByCustomerCompleted(this, new DonHang_GetByCustomerCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -239,6 +312,41 @@ namespace WindowsForms.DonHang_ServiceReferences {
             if ((this.Update_DonHangCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.Update_DonHangCompleted(this, new Update_DonHangCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://tempuri.org/Insert_DonHang", RequestNamespace="http://tempuri.org/", ResponseNamespace="http://tempuri.org/", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool Insert_DonHang(System.DateTime ngay_dh, string tinh_trang, int ma_kh, int ma_nv) {
+            object[] results = this.Invoke("Insert_DonHang", new object[] {
+                        ngay_dh,
+                        tinh_trang,
+                        ma_kh,
+                        ma_nv});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void Insert_DonHangAsync(System.DateTime ngay_dh, string tinh_trang, int ma_kh, int ma_nv) {
+            this.Insert_DonHangAsync(ngay_dh, tinh_trang, ma_kh, ma_nv, null);
+        }
+        
+        /// <remarks/>
+        public void Insert_DonHangAsync(System.DateTime ngay_dh, string tinh_trang, int ma_kh, int ma_nv, object userState) {
+            if ((this.Insert_DonHangOperationCompleted == null)) {
+                this.Insert_DonHangOperationCompleted = new System.Threading.SendOrPostCallback(this.OnInsert_DonHangOperationCompleted);
+            }
+            this.InvokeAsync("Insert_DonHang", new object[] {
+                        ngay_dh,
+                        tinh_trang,
+                        ma_kh,
+                        ma_nv}, this.Insert_DonHangOperationCompleted, userState);
+        }
+        
+        private void OnInsert_DonHangOperationCompleted(object arg) {
+            if ((this.Insert_DonHangCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.Insert_DonHangCompleted(this, new Insert_DonHangCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -315,6 +423,32 @@ namespace WindowsForms.DonHang_ServiceReferences {
     
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void GetInfo_KhachHangPhoneCompletedEventHandler(object sender, GetInfo_KhachHangPhoneCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GetInfo_KhachHangPhoneCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GetInfo_KhachHangPhoneCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
     public delegate void DonHang_GetByDateCompletedEventHandler(object sender, DonHang_GetByDateCompletedEventArgs e);
     
     /// <remarks/>
@@ -326,6 +460,32 @@ namespace WindowsForms.DonHang_ServiceReferences {
         private object[] results;
         
         internal DonHang_GetByDateCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public System.Data.DataTable Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.Data.DataTable)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void DonHang_GetByCustomerCompletedEventHandler(object sender, DonHang_GetByCustomerCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class DonHang_GetByCustomerCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal DonHang_GetByCustomerCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
@@ -378,6 +538,32 @@ namespace WindowsForms.DonHang_ServiceReferences {
         private object[] results;
         
         internal Update_DonHangCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void Insert_DonHangCompletedEventHandler(object sender, Insert_DonHangCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class Insert_DonHangCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal Insert_DonHangCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }
